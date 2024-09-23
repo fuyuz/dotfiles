@@ -1,0 +1,35 @@
+# for general
+cask_args appdir: "/Applications"
+tap "borkdude/brew"
+
+# for GUI
+cask "iterm2"
+cask "rectangle"
+cask "font-cascadia-code-nf"
+cask "google-chrome"
+cask "obsidian"
+
+# for CLI
+brew "neovim"
+brew "fzf"
+brew "fd"
+brew "ripgrep"
+brew "git"
+brew "lazygit"
+
+# for clojure
+brew "clojure-lsp/brew/clojure-lsp-native"
+brew "borkdude/brew/clj-kondo"
+cask "cljstyle"
+
+# for web utils
+brew "httpie"
+cask "httpie"
+brew "wget"
+
+brew "docker"
+brew "docker-compose"
+
+# for Android
+cask "jetbrains-toolbox"
+brew "kdoctor"
