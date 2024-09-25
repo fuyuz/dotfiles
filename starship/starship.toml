@@ -1,0 +1,10 @@
+[directory]
+style = "fg:blue"
+format = "[$path]($style)"
+truncation_length = 4
+truncation_symbol = "..."
+truncate_to_repo = false
+
+[cmd_duration]
+show_milliseconds = true
+format = ' [󱫌 $duration]($style)'
