@@ -3,19 +3,22 @@ cask_args appdir: "/Applications"
 tap "borkdude/brew"
 
 # for GUI
-cask "iterm2"
+cask "wezterm"
 cask "rectangle"
 cask "font-cascadia-code-nf"
 cask "google-chrome"
 cask "obsidian"
 
 # for CLI
+brew "sheldon"
 brew "neovim"
 brew "fzf"
 brew "fd"
 brew "ripgrep"
 brew "git"
-brew "lazygit"
+brew "tig"
+brew "starship"
+brew "rtx"
 
 # for clojure
 brew "clojure-lsp/brew/clojure-lsp-native"
