@@ -8,6 +8,7 @@ cask "rectangle"
 cask "font-cascadia-code-nf"
 cask "google-chrome"
 cask "obsidian"
+cask "slack"
 
 # for CLI
 brew "sheldon"
