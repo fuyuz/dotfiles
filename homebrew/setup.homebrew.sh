@@ -14,7 +14,7 @@ if [ $(uname) = Darwin ]; then
     echo "nothing happened since homebrew is already installed."
   fi
 
-  brew bundle -file=$Brewfile
+  brew bundle --file=$BREWFILE
 fi
 
 echo "finish homebrew setup"

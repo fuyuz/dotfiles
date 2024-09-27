@@ -20,6 +20,7 @@ brew "git"
 brew "tig"
 brew "starship"
 brew "rtx"
+brew "tree"
 
 # for clojure
 brew "clojure-lsp/brew/clojure-lsp-native"

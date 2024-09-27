@@ -11,4 +11,7 @@ config.window_background_opacity = 0.8
 config.macos_window_background_blur = 20
 config.colors = { background = 'rgb(0,0,0)' }
 
+-- mac option key settigns
+config.send_composed_key_when_left_alt_is_pressed = true
+
 return config
