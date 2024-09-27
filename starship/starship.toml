@@ -7,4 +7,10 @@ truncate_to_repo = false
 
 [cmd_duration]
 show_milliseconds = true
-format = ' [󱫌 $duration]($style)'
+format = "[󱫌 $duration]($style) "
+
+[custom.git_user]
+command = "git config user.name"
+when = "git rev-parse --git-dir 2> /dev/null"
+format = "via [$output]($style) "
+style = "yellow"

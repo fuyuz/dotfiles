@@ -6,7 +6,7 @@ echo "start starship setup"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FILES=(starship.toml)
-CONFIG_DIR="$HOME/.config/starship"
+CONFIG_DIR="$HOME/.config"
 
 mkdir -p "$CONFIG_DIR"
 for file in "${FILES[@]}"; do
