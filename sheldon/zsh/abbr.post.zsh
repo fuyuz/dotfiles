@@ -2,6 +2,9 @@
 abbr g='git'
 abbr gp='git push'
 abbr gpf='git push --force'
+abbr gs='git switch'
+abbr gbc='git switch -c'
+abbr gco='git checkout'
 
 # vim
 abbr v='vim'
