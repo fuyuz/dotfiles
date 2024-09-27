@@ -16,7 +16,7 @@ lua/plugins/tig.lua
 )
 CONFIG_DIR="$HOME/.config/nvim"
 
-mkdir -p CONFIG_DIR
+mkdir -p "$CONFIG_DIR"
 for file in "${FILES[@]}"; do
   SOURCE="$SCRIPT_DIR/$file"
   TARGET="$CONFIG_DIR/$file"
