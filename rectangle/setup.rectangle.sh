@@ -2,7 +2,7 @@
 
 set -eu
 
-echo "start rectangle setup"
+echo "start Rectangle setup"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_FILE="$SCRIPT_DIR/RectangleConfig.json"
@@ -22,4 +22,4 @@ else
   echo "Configuration file not found"
 fi
 
-echo "finish rectangle setup"
+echo "finish Rectangle setup"
