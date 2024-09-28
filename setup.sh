@@ -12,6 +12,7 @@ sheldon/setup.sheldon.sh
 starship/setup.starship.sh
 wezterm/setup.wezterm.sh
 nvim/setup.nvim.sh
+zsh/setup.zsh.sh
 )
 
 for file in "${FILES[@]}"; do
