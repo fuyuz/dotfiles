@@ -4,6 +4,7 @@ opt.ambiwidth = 'double'
 opt.autoindent = true
 opt.smartindent = true
 opt.cursorline = true
+opt.wrap = true
 
 opt.tabstop = 2
 opt.softtabstop = 2

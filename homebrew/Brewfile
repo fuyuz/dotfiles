@@ -21,6 +21,7 @@ brew "tig"
 brew "starship"
 brew "rtx"
 brew "tree"
+brew "gh"
 
 # for clojure
 brew "clojure-lsp/brew/clojure-lsp-native"

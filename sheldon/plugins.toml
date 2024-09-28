@@ -43,3 +43,6 @@ apply = ['defer']
 
 [plugins.fzf]
 inline = 'zsh-defer source $HOME/.config/sheldon/zsh/fzf.post.zsh'
+
+[plugins.gh]
+inline = 'zsh-defer eval "$(gh completion -s zsh)"'

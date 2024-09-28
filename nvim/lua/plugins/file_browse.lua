@@ -2,10 +2,10 @@ require("telescope").load_extension "file_browser"
 
 require("telescope").setup{
   pickers = {
-		find_files = {
-			find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
-		},
-	},
+    find_files = {
+      find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
+    },
+  },
 }
 
 local builtin = require('telescope.builtin')
@@ -22,3 +22,27 @@ harpoon:setup()
 -- harpoon
 vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end, {})
 vim.keymap.set('n', '<leader>h', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, {})
+
+-- coc
+vim.api.nvim_create_autocmd("LspAttach", {
+  desc = "Attach key mappings for LSP functionalities",
+  callback = function()
+    vim.keymap.set('n', '<leader>jd', '<Plug>(coc-definition)')
+    vim.keymap.set('n', '<leader>jy', '<Plug>(coc-type-definition)')
+    vim.keymap.set('n', '<leader>ji', '<Plug>(coc-implementation)')
+    vim.keymap.set('n', '<leader>jr', '<Plug>(coc-references)')
+    vim.keymap.set('n', '<leader>cr', '<Plug>(coc-rename)')
+    vim.keymap.set('n', '<leader>cf', '<Plug>(coc-fix-current)')
+    function _G.show_docs()
+      local cw = vim.fn.expand('<cword>')
+      if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
+        vim.api.nvim_command('h ' .. cw)
+      elseif vim.api.nvim_eval('coc#rpc#ready()') then
+        vim.fn.CocActionAsync('doHover')
+      else
+        vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
+      end
+    end
+    keyset('n', '<leader>K', '<CMD>lua _G.show_docs()<CR>', { silent = true })
+  end
+})

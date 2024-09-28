@@ -17,7 +17,6 @@ require('jetpack.packer').startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
-  use 'pechorin/any-jump.vim'
   use 'windwp/nvim-autopairs'
   use 'echasnovski/mini.indentscope'
   use 'akinsho/toggleterm.nvim'
@@ -34,7 +33,7 @@ require('jetpack.packer').startup(function(use)
     ft = 'clojure',
     requires = {{'Olical/conjure'}},
   }
-  use { 
+  use {
     'luochen1990/rainbow',
     ft = 'clojure',
   }
@@ -43,6 +42,8 @@ require('jetpack.packer').startup(function(use)
     branch = "harpoon2",
     requires = {{"nvim-lua/plenary.nvim"}},
   }
+  use 'nvim-treesitter/nvim-treesitter'
+  use { 'neoclide/coc.nvim', branch = 'release' }
 end)
 
 local jetpack = require('jetpack')
