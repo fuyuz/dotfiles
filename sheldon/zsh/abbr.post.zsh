@@ -24,6 +24,8 @@ abbr v='vim'
 alias vim='nvim'
 
 # others
-alias ls='ls --color=auto'
+alias ls='eza'
 abbr l='ls -l'
 abbr la='ls -la'
+
+alias cat='gat'

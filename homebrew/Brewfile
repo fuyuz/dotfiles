@@ -19,9 +19,10 @@ brew "ripgrep"
 brew "git"
 brew "tig"
 brew "starship"
-brew "rtx"
-brew "tree"
+brew "mise"
 brew "gh"
+brew "eza"
+brew "gat"
 
 # for clojure
 brew "clojure-lsp/brew/clojure-lsp-native"

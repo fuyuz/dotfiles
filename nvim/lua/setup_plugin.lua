@@ -43,7 +43,6 @@ require('jetpack.packer').startup(function(use)
     requires = {{"nvim-lua/plenary.nvim"}},
   }
   use 'nvim-treesitter/nvim-treesitter'
-  use { 'neoclide/coc.nvim', branch = 'release' }
 end)
 
 local jetpack = require('jetpack')

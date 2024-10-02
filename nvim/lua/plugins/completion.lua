@@ -33,9 +33,8 @@ cmp.setup.cmdline(':', {
   )
 })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['clojure_lsp'].setup {
-  capabilities = capabilities
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 
 local bufopts = { noremap = true, silent = true, buffer = bufnr }
