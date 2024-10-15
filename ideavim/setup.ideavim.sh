@@ -2,11 +2,11 @@
 
 set -eu
 
-echo "start neovim setup"
+echo "start ideavim setup"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-FILES=(init.lua)
-CONFIG_DIR="$HOME/.config/nvim"
+FILES=(.ideavimrc)
+CONFIG_DIR="$HOME"
 
 mkdir -p "$CONFIG_DIR"
 for file in "${FILES[@]}"; do
@@ -15,4 +15,4 @@ for file in "${FILES[@]}"; do
   ln -sf "$SOURCE" "$TARGET"
 done
 
-echo "finish neovim setup"
+echo "finish ideavim setup"

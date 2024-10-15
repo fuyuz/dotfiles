@@ -1,3 +1,5 @@
+command_timeout = 1000
+
 [directory]
 style = "fg:blue"
 format = "[$path]($style) "

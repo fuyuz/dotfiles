@@ -8,6 +8,7 @@ abbr gpf='git push --force'
 abbr gs='git switch'
 abbr gbc='git switch -c'
 abbr gco='git checkout'
+abbr gfa='git fetch --all'
 
 # github
 abbr ghp='gh pr'
