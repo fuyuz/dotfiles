@@ -21,6 +21,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
@@ -170,12 +171,25 @@ require("lazy").setup({
 		},
 		config = function()
 			require("telescope").setup({
+				defaults = {
+					border = {
+						prompt = { 0, 1, 1, 1 },
+						results = { 1, 1, 1, 1 },
+						preview = { 1, 1, 1, 1 },
+					},
+					borderchars = {
+						prompt = { " ", " ", "─", "│", "│", " ", "─", "└" },
+						results = { "─", " ", " ", "│", "┌", "─", " ", "│" },
+						preview = { "─", "│", "─", "│", "┬", "┐", "┘", "┴" },
+					},
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
 					},
 				},
 			})
+
 			pcall(require("telescope").load_extension, "fzf")
 			pcall(require("telescope").load_extension, "ui-select")
 			local builtin = require("telescope.builtin")
@@ -442,13 +456,10 @@ require("lazy").setup({
 		"navarasu/onedark.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
-			-- Load the colorscheme here.
-			-- Like many other themes, this one has different styles, and you could load
-			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+			require("onedark").setup({
+				transparent = true,
+			})
 			vim.cmd.colorscheme("onedark")
-
-			-- You can configure highlights by doing something like:
-			vim.cmd.hi("Comment gui=none")
 		end,
 	},
 
@@ -499,6 +510,13 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>h", function()
 				harpoon.ui:toggle_quick_menu(harpoon:list())
 			end, { desc = "Show [H]apoon list" })
+		end,
+	},
+
+	{ -- show undo tree
+		"mbbill/undotree",
+		config = function()
+			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 		end,
 	},
 
