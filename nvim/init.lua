@@ -77,7 +77,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "show [e]rror on float" })
+vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { desc = "[g]o to [e]rror" })
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -369,7 +370,6 @@ require("lazy").setup({
 
 	{ -- Autocompletion
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
 		dependencies = {
 			{
 				"L3MON4D3/LuaSnip",
@@ -384,6 +384,8 @@ require("lazy").setup({
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-cmdline",
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -443,6 +445,19 @@ require("lazy").setup({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "path" },
+				},
+			})
+			cmp.setup.cmdline({ "/", "?" }, {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
+				},
+			})
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "path" },
+					{ name = "cmdline" },
 				},
 			})
 		end,
@@ -529,7 +544,7 @@ require("lazy").setup({
 			require("mini.pairs").setup({})
 			-- auto pair
 			require("mini.jump2d").setup({
-				labels = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+				labels = "abcdefghijklmnopqrstuvwxyz",
 				allowed_lines = {
 					blank = false,
 					cusor_before = true,
@@ -600,6 +615,50 @@ require("lazy").setup({
 			},
 			indent = { enable = true, disable = { "ruby" } },
 		},
+	},
+	{ -- file explorer
+		"stevearc/oil.nvim",
+		config = function()
+			require("oil").setup({
+				default_file_explorer = true,
+				delete_to_trash = true,
+				keymaps = {
+					["g?"] = "actions.show_help",
+					["<CR>"] = "actions.select",
+					["<C-s>"] = {
+						"actions.select",
+						opts = { vertical = true },
+						desc = "Open the entry in a vertical split",
+					},
+					["<C-h>"] = {
+						"actions.select",
+						opts = { horizontal = true },
+						desc = "Open the entry in a horizontal split",
+					},
+					["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
+					["<C-p>"] = "actions.preview",
+					["<C-c>"] = "actions.close",
+					["<C-l>"] = "actions.refresh",
+					["-"] = "actions.parent",
+					["_"] = "actions.open_cwd",
+					["`"] = "actions.cd",
+					["~"] = false,
+					["gs"] = false,
+					["gx"] = false,
+					["g."] = false,
+					["g\\"] = false,
+				},
+				view_options = {
+					show_hidden = true,
+				},
+			})
+			vim.keymap.set(
+				"n",
+				"<leader>o",
+				require("oil").toggle_float,
+				{ noremap = true, silent = true, desc = "[o]pen file explorer" }
+			)
+		end,
 	},
 }, {
 	ui = {
