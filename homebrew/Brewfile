@@ -5,7 +5,7 @@ tap "borkdude/brew"
 # for GUI
 cask "wezterm"
 cask "rectangle"
-cask "font-cascadia-code-nf"
+cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
 cask "obsidian"
 cask "slack"

@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -36,7 +36,6 @@ vim.opt.splitbelow = true
 
 vim.opt.list = true
 vim.opt.listchars = {
-	tab = "»-",
 	extends = "»",
 	precedes = "«",
 	trail = "-",
@@ -49,8 +48,6 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 
 vim.opt.scrolloff = 10
-
-vim.opt.ambiwidth = "double"
 
 vim.opt.wrap = true
 
@@ -172,18 +169,6 @@ require("lazy").setup({
 		},
 		config = function()
 			require("telescope").setup({
-				defaults = {
-					border = {
-						prompt = { 0, 1, 1, 1 },
-						results = { 1, 1, 1, 1 },
-						preview = { 1, 1, 1, 1 },
-					},
-					borderchars = {
-						prompt = { " ", " ", "─", "│", "│", " ", "─", "└" },
-						results = { "─", " ", " ", "│", "┌", "─", " ", "│" },
-						preview = { "─", "│", "─", "│", "┬", "┐", "┘", "┴" },
-					},
-				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
@@ -464,10 +449,6 @@ require("lazy").setup({
 	},
 
 	{ -- You can easily change to a different colorscheme.
-		-- Change the name of the colorscheme plugin below, and then
-		-- change the command in the config to whatever the name of that colorscheme is.
-		--
-		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
 		"navarasu/onedark.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
@@ -538,8 +519,6 @@ require("lazy").setup({
 	{ -- Collection of various small independent plugins/modules
 		"echasnovski/mini.nvim",
 		config = function()
-			-- show indent level
-			require("mini.indentscope").setup({})
 			-- auto pair
 			require("mini.pairs").setup({})
 			-- auto pair
