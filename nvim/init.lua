@@ -634,11 +634,30 @@ require("lazy").setup({
 			})
 			vim.keymap.set(
 				"n",
-				"<leader>o",
+				"<leader>O",
 				require("oil").toggle_float,
-				{ noremap = true, silent = true, desc = "[o]pen file explorer" }
+				{ noremap = true, silent = true, desc = "[O]pen file explorer" }
 			)
 		end,
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		config = function()
+			require("nvim-tree").setup({
+				filters = {
+					dotfiles = true,
+				},
+			})
+			vim.keymap.set(
+				"n",
+				"<leader>o",
+				":NvimTreeToggle<CR>",
+				{ noremap = true, silent = true, desc = "[o]pen tree file explorer" }
+			)
+		end,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
 	},
 }, {
 	ui = {
