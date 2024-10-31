@@ -11,14 +11,18 @@ abbr gco='git checkout'
 abbr gfa='git fetch --all'
 
 # github
-abbr ghp='gh pr'
+abbr ghpr='gh pr'
+abbr ghpc='gh pr create'
 abbr ghpl='gh pr list'
 abbr ghpv='gh pr view'
-abbr ghpv='gh pr status'
+abbr ghps='gh pr status'
 abbr ghi='gh issue'
 abbr ghil='gh issue list'
 abbr ghiv='gh issue view'
 abbr ghpv='gh issue status'
+
+# lazygit
+abbr lg='lazygit'
 
 # vim
 abbr v='vim'
