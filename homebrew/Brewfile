@@ -23,6 +23,7 @@ brew "mise"
 brew "gh"
 brew "eza"
 brew "gat"
+brew "gotop"
 
 # for clojure
 brew "clojure-lsp/brew/clojure-lsp-native"

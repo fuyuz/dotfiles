@@ -34,3 +34,4 @@ abbr l='ls -l'
 abbr la='ls -la'
 
 alias cat='gat'
+alias top='gotop'

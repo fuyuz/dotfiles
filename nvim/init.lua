@@ -520,9 +520,7 @@ require("lazy").setup({
 	{ -- Collection of various small independent plugins/modules
 		"echasnovski/mini.nvim",
 		config = function()
-			-- auto pair
-			require("mini.pairs").setup({})
-			-- auto pair
+			-- 2d movement
 			require("mini.jump2d").setup({
 				labels = "abcdefghijklmnopqrstuvwxyz",
 				allowed_lines = {
@@ -657,6 +655,23 @@ require("lazy").setup({
 		end,
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
+		},
+	},
+	{
+		"pwntester/octo.nvim",
+		config = function()
+			require("octo").setup({
+				ssh_aliases = { ["github-fuyuz"] = "github.com" },
+				suppress_missing_scope = {
+					projects_v2 = true,
+				},
+				enable_builtin = true,
+			})
+			vim.keymap.set("n", "<leader>G", "<cmd>Octo<cr>", { desc = "[G]ithub command" })
+		end,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"nvim-telescope/telescope.nvim",
 		},
 	},
 }, {
