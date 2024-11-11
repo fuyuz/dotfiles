@@ -4,7 +4,9 @@ tap "borkdude/brew"
 
 # for GUI
 cask "wezterm"
-cask "rectangle"
+cask "koekeishiya/formulae/yabai"
+cask "koekeishiya/formulae/skhd"
+cask "FelixKratz/formulae/borders"
 cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
 cask "obsidian"
@@ -23,7 +25,8 @@ brew "mise"
 brew "gh"
 brew "eza"
 brew "gat"
-brew "gotop"
+brew "btop"
+berw "jq"
 
 # for clojure
 brew "clojure-lsp/brew/clojure-lsp-native"
