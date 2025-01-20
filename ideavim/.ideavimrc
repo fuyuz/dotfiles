@@ -3,6 +3,5 @@ let mapleader="\<Space>"
 nmap gi <Action>(GotoImplementation)
 nmap gd <Action>(GotoDefinition)
 nmap gr <Action>(FindUsages)
-nmap <leader>f <Action>(SearchEverywhere)
-nmap <leader>o <Action>(GoToAction)
+nmap <leader>o <Action>(SearchEverywhere)
 nmap <leader>rn <Action>(RenameElement)
