@@ -45,3 +45,5 @@ shift + alt - p: yabai -m window --focus "$(yabai -m query --windows | jq -re "[
 shift + alt - n: yabai -m window --focus "$(yabai -m query --windows | jq -re "[sort_by(.space, .id, .frame) | reverse | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\" and .\"is-hidden\" == false) | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")"
 
 alt - s: yabai -m window --toggle split
+
+0x32: skhd -k "escape"
