@@ -4,9 +4,9 @@ tap "borkdude/brew"
 
 # for GUI
 cask "wezterm"
-cask "koekeishiya/formulae/yabai"
-cask "koekeishiya/formulae/skhd"
-cask "FelixKratz/formulae/borders"
+brew "koekeishiya/formulae/yabai"
+brew "koekeishiya/formulae/skhd"
+brew "FelixKratz/formulae/borders"
 cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
 cask "obsidian"
