@@ -2,7 +2,10 @@ local wezterm = require("wezterm")
 local config = {}
 
 -- font
-config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "DemiBold" })
+config.font = wezterm.font_with_fallback({
+	{ family = "JetBrainsMono Nerd Font", weight = "DemiBold" },
+	"ヒラギノ角ゴシック",
+})
 config.font_size = 16.0
 
 -- colors
