@@ -5,3 +5,4 @@ nmap gd <Action>(GotoDefinition)
 nmap gr <Action>(FindUsages)
 nmap <leader>o <Action>(SearchEverywhere)
 nmap <leader>rn <Action>(RenameElement)
+inoremap <silent> jj <esc>

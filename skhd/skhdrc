@@ -27,10 +27,10 @@ alt - space: yabai -m window --toggle float
 
 # Application shortcut
 alt - 1: open -a "WezTerm.app"
-alt - 2: open -a "Google Chrome"
+alt - 2: open -a "Arc"
 alt - 3: open -a "Slack.app"
 alt - q: open -a "WezTerm.app"
-alt - w: open -a "Google Chrome"
+alt - w: open -a "Arc"
 alt - e: open -a "Slack.app"
 
 # Change working spaces
