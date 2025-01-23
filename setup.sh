@@ -14,6 +14,7 @@ starship/setup.starship.sh
 wezterm/setup.wezterm.sh
 nvim/setup.nvim.sh
 zsh/setup.zsh.sh
+ideavim/setup.ideavim.sh
 )
 
 for file in "${FILES[@]}"; do
