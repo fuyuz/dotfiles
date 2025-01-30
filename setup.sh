@@ -15,6 +15,7 @@ wezterm/setup.wezterm.sh
 nvim/setup.nvim.sh
 zsh/setup.zsh.sh
 ideavim/setup.ideavim.sh
+karabiner/setup.karabiner.sh
 )
 
 for file in "${FILES[@]}"; do

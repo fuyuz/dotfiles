@@ -11,6 +11,7 @@ cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
 cask "obsidian"
 cask "slack"
+cask "karabiner-elements"
 
 # for CLI
 brew "sheldon"
