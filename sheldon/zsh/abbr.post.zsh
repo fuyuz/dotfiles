@@ -11,7 +11,7 @@ abbr gco='git checkout'
 abbr gfa='git fetch --all'
 
 # github
-abbr ghpr='gh pr'
+abbr ghp='gh pr'
 abbr ghpc='gh pr create'
 abbr ghpl='gh pr list'
 abbr ghpv='gh pr view'
@@ -19,7 +19,8 @@ abbr ghps='gh pr status'
 abbr ghi='gh issue'
 abbr ghil='gh issue list'
 abbr ghiv='gh issue view'
-abbr ghpv='gh issue status'
+abbr ghis='gh issue status'
+abbr ghpr='gh search prs --review-requested=@me --state=open'
 
 # lazygit
 abbr lg='lazygit'
