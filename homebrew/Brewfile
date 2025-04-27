@@ -4,11 +4,13 @@ tap "borkdude/brew"
 
 # for GUI
 cask "wezterm"
+tap "koekeishiya/formulae"
 brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
 brew "FelixKratz/formulae/borders"
 cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
+cask "arc"
 cask "obsidian"
 cask "slack"
 cask "karabiner-elements"
@@ -21,6 +23,7 @@ brew "fd"
 brew "ripgrep"
 brew "git"
 brew "tig"
+brew "lazygit"
 brew "starship"
 brew "mise"
 brew "gh"
@@ -28,11 +31,6 @@ brew "eza"
 brew "gat"
 brew "btop"
 brew "jq"
-
-# for clojure
-brew "clojure-lsp/brew/clojure-lsp-native"
-brew "borkdude/brew/clj-kondo"
-cask "cljstyle"
 
 # for web utils
 brew "httpie"
