@@ -20,7 +20,7 @@ defer = "{{ hooks | get: \"pre\" | nl }}{% for file in files %}zsh-defer source 
 inline = 'eval "$(starship init zsh)"'
 
 [plugins.mise]
-inline = 'eval "$(mise activate zsh)" && eval "$(mise activate --shims)"'
+inline = 'eval "$(mise activate --shims)"'
 
 [plugins.zsh-defer]
 github = 'romkatv/zsh-defer'
