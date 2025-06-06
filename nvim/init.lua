@@ -76,7 +76,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "show [e]rror on float" })
-vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { desc = "[g]o to [e]rror" })
+vim.keymap.set("n", "ge", vim.diagnostic.jump, { desc = "[g]o to [e]rror" })
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -689,6 +689,10 @@ require("lazy").setup({
 				-- put some options here or leave it empty to use default settings
 			})
 		end,
+	},
+	{
+		"github/copilot.vim",
+		lazy = false,
 	},
 }, {
 	ui = {

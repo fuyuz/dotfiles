@@ -16,6 +16,7 @@ nvim/setup.nvim.sh
 zsh/setup.zsh.sh
 ideavim/setup.ideavim.sh
 karabiner/setup.karabiner.sh
+claude/setup.claude.sh
 )
 
 for file in "${FILES[@]}"; do
