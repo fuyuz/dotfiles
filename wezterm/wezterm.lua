@@ -54,6 +54,11 @@ config.keys = {
 		key = "l",
 		action = wezterm.action({ ActivatePaneDirection = "Right" }),
 	},
+	{
+		mods = "LEADER",
+		key = "q",
+		action = wezterm.action.SendKey({ key = "q", mods = "CTRL" }),
+	},
 }
 
 config.window_decorations = "RESIZE"
