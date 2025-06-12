@@ -18,29 +18,29 @@ defer = "{{ hooks | get: \"pre\" | nl }}{% for file in files %}zsh-defer source 
 
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
-
+ 
 [plugins.mise]
 inline = 'eval "$(mise activate --shims)"'
-
+ 
 [plugins.zsh-defer]
 github = 'romkatv/zsh-defer'
-
+ 
 [plugins.ohmyzsh-lib]
 github = "ohmyzsh/ohmyzsh"
 dir = "lib"
 use = ["{completion,key-bindings,directories}.zsh"]
 hooks.pre = 'autoload -Uz compinit && compinit'
 apply = ['defer']
-
+ 
 [plugins.zsh-syntax-highlighting]
 github = 'zsh-users/zsh-syntax-highlighting'
 apply = ['defer']
-
+ 
 [plugins.zsh-abbr]
 github = 'olets/zsh-abbr'
 hooks.post = 'zsh-defer source $HOME/.config/sheldon/zsh/abbr.post.zsh'
 apply = ['defer']
-
+ 
 [plugins.fzf]
 inline = 'zsh-defer source $HOME/.config/sheldon/zsh/fzf.post.zsh'
 
