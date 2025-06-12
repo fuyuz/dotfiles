@@ -36,3 +36,5 @@ abbr la='ls -la'
 
 alias cat='gat'
 alias top='btop'
+
+alias yolo='claude --dangerously-skip-permissions'
