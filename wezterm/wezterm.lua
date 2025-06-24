@@ -68,4 +68,12 @@ config.show_close_tab_button_in_tabs = false
 -- stop termianl bells
 config.audible_bell = "Disabled"
 
+-- notification for claude completion
+wezterm.on('bell', function(window, pane)
+	local foreground_process = pane:get_foreground_process_info()
+	if foreground_process and foreground_process.name and foreground_process.name:find('claude') then
+		window:toast_notification('Claude Code', 'Task completed', nil, 4000)
+	end
+end)
+
 return config

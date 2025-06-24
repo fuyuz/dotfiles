@@ -4,7 +4,7 @@ abbr wi='wezterm imgcat'
 # git
 abbr g='git'
 abbr gp='git push'
-abbr gpf='git push --force'
+abbr gpf='git push --force-with-lease'
 abbr gs='git switch'
 abbr gbc='git switch -c'
 abbr gco='git checkout'
