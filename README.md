@@ -9,7 +9,7 @@
 - ターミナルの生産性（zsh、neovim、fzfなど）
 - ウィンドウ管理（yabai、skhd）
 - 開発ツール（git、docker、clojureツールなど）
-- アプリケーション設定（Karabiner-Elements、WezTermなど）
+- アプリケーション設定（WezTermなど）
 
 ## コンポーネント
 
@@ -21,7 +21,6 @@
 - **ウィンドウ管理**: yabai、skhd、borders
 - **プロンプト**: Starship
 - **パッケージマネージャー**: Homebrew
-- **キーボードカスタマイズ**: Karabiner-Elements
 - **バージョン管理**: mise
 - **開発ツール**: git、docker、clojure-lspなど
 - **アプリケーション**: Google Chrome、Obsidian、Slack、JetBrains Toolbox
