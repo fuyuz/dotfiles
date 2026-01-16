@@ -13,7 +13,6 @@ cask "google-chrome"
 cask "arc"
 cask "obsidian"
 cask "slack"
-cask "karabiner-elements"
 cask "raycast"
 
 # for CLI
