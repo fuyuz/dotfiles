@@ -59,11 +59,51 @@ config.keys = {
 		key = "q",
 		action = wezterm.action.SendKey({ key = "q", mods = "CTRL" }),
 	},
+	{
+		mods = "LEADER",
+		key = "n",
+		action = wezterm.action_callback(function(window, pane)
+			local workspaces = wezterm.mux.get_workspace_names()
+			local choices = {
+				{ id = "__create_new__", label = "+ Create New Workspace" },
+			}
+			for _, name in ipairs(workspaces) do
+				table.insert(choices, { id = name, label = name })
+			end
+
+			window:perform_action(
+				wezterm.action.InputSelector({
+					title = "Select or Create Workspace",
+					choices = choices,
+					fuzzy = true,
+					action = wezterm.action_callback(function(inner_window, inner_pane, id, label)
+						if id == "__create_new__" then
+							inner_window:perform_action(
+								wezterm.action.PromptInputLine({
+									description = "Enter new workspace name:",
+									action = wezterm.action_callback(function(win, p, line)
+										if line and #line > 0 then
+											win:perform_action(wezterm.action.SwitchToWorkspace({ name = line }), p)
+										end
+									end),
+								}),
+								inner_pane
+							)
+						elseif id then
+							inner_window:perform_action(wezterm.action.SwitchToWorkspace({ name = id }), inner_pane)
+						end
+					end),
+				}),
+				pane
+			)
+		end),
+	},
 }
 
 config.window_decorations = "RESIZE"
 config.show_new_tab_button_in_tab_bar = false
 config.show_close_tab_button_in_tabs = false
+config.front_end = "OpenGL"
 
 config.use_ime = true
 
