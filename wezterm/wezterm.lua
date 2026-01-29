@@ -107,4 +107,67 @@ config.front_end = "OpenGL"
 
 config.use_ime = true
 
+config.window_frame = {
+	font_size = 13.0,
+}
+
+local function hash_string(str)
+	local hash = 5381
+	for i = 1, #str do
+		hash = ((hash * 33) + string.byte(str, i)) % 0xFFFFFFFF
+	end
+	return hash
+end
+
+local function hsl_to_rgb(h, s, l)
+	local r, g, b
+	if s == 0 then
+		r, g, b = l, l, l
+	else
+		local function hue2rgb(p, q, t)
+			if t < 0 then t = t + 1 end
+			if t > 1 then t = t - 1 end
+			if t < 1 / 6 then return p + (q - p) * 6 * t end
+			if t < 1 / 2 then return q end
+			if t < 2 / 3 then return p + (q - p) * (2 / 3 - t) * 6 end
+			return p
+		end
+		local q = l < 0.5 and l * (1 + s) or l + s - l * s
+		local p = 2 * l - q
+		r = hue2rgb(p, q, h + 1 / 3)
+		g = hue2rgb(p, q, h)
+		b = hue2rgb(p, q, h - 1 / 3)
+	end
+	return math.floor(r * 255), math.floor(g * 255), math.floor(b * 255)
+end
+
+local function workspace_color(name)
+	local hash = hash_string(name)
+	local hue = (hash % 360) / 360
+	local saturation = 0.7
+	local lightness = 0.3
+	local r, g, b = hsl_to_rgb(hue, saturation, lightness)
+	return string.format("#%02x%02x%02x", r, g, b)
+end
+
+wezterm.on("update-status", function(window, pane)
+	local workspace = window:active_workspace()
+	local bg_color = workspace_color(workspace)
+
+	window:set_left_status(wezterm.format({
+		{ Background = { Color = bg_color } },
+		{ Foreground = { Color = "#ffffff" } },
+		{ Text = "   " .. workspace .. "   " },
+	}))
+
+	window:set_config_overrides({
+		colors = {
+			background = "rgb(0,0,0)",
+			tab_bar = {
+				background = bg_color,
+			},
+		},
+	})
+end)
+
 return config
