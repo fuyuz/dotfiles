@@ -70,10 +70,13 @@ repoPaths: {}
 keybindings:
   prs:
     - key: O
-      command: cd {{.RepoPath}} && gh pr checkout {{.PrNumber}}
+      command: gh pr checkout {{.PrNumber}}
+    - key: d
+      name: review (octorus)
+      command: "or --repo {{.RepoName}} --pr {{.PrNumber}}"
   issues:
     - key: O
-      command: cd {{.RepoPath}} && gh issue develop {{.IssueNumber}}
+      command: gh issue develop {{.IssueNumber}}
 
 theme:
   ui:
