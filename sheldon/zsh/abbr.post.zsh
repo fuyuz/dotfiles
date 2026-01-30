@@ -21,6 +21,7 @@ abbr ghil='gh issue list'
 abbr ghiv='gh issue view'
 abbr ghis='gh issue status'
 abbr ghpr='gh search prs --review-requested=@me --state=open'
+abbr gd='gh dash'
 
 # lazygit
 abbr lg='lazygit'

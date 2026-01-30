@@ -16,6 +16,7 @@ nvim/setup.nvim.sh
 zsh/setup.zsh.sh
 ideavim/setup.ideavim.sh
 claude/setup.claude.sh
+gh-dash/setup.gh-dash.sh
 )
 
 for file in "${FILES[@]}"; do

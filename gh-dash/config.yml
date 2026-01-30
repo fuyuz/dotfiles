@@ -1,0 +1,88 @@
+prSections:
+  - title: My Pull Requests
+    filters: is:open author:@me
+    layout:
+      author:
+        hidden: true
+
+  - title: Needs My Review
+    filters: is:open review-requested:@me
+    layout:
+      author:
+        width: 15
+
+  - title: Involved
+    filters: is:open involves:@me -author:@me -review-requested:@me
+    layout:
+      author:
+        width: 15
+
+issuesSections:
+  - title: My Issues
+    filters: is:open author:@me
+    layout:
+      author:
+        hidden: true
+
+  - title: Assigned
+    filters: is:open assignee:@me
+    layout:
+      author:
+        width: 15
+
+  - title: Mentioned
+    filters: is:open mentions:@me -author:@me -assignee:@me
+    layout:
+      author:
+        width: 15
+
+defaults:
+  preview:
+    open: true
+    width: 60
+  prsLimit: 20
+  issuesLimit: 20
+  view: prs
+  layout:
+    prs:
+      updatedAt:
+        width: 7
+      repo:
+        width: 20
+      author:
+        width: 15
+      lines:
+        width: 16
+      ci:
+        width: 10
+    issues:
+      updatedAt:
+        width: 7
+      repo:
+        width: 20
+      creator:
+        width: 15
+      reactions:
+        width: 10
+
+repoPaths: {}
+
+keybindings:
+  prs:
+    - key: O
+      command: cd {{.RepoPath}} && gh pr checkout {{.PrNumber}}
+  issues:
+    - key: O
+      command: cd {{.RepoPath}} && gh issue develop {{.IssueNumber}}
+
+theme:
+  ui:
+    sectionsShowCount: true
+  colors:
+    text:
+      primary: "#E2E1ED"
+      secondary: "#666CA6"
+      inverted: "#242347"
+      faint: "#3E4057"
+      warning: "#F23D5C"
+      success: "#3DF294"
