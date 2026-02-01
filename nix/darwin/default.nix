@@ -71,6 +71,7 @@
     home = "/Users/${username}";
   };
 
+
   # Allow TouchID for sudo (new API)
   security.pam.services.sudo_local.touchIdAuth = true;
 

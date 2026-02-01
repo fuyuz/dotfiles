@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-host="${HOSTNAME:-$(hostname -s)}"
-user="${USER:-$(id -un)}"
+host="$(scutil --get LocalHostName 2>/dev/null || hostname -s || echo "")"
+if [[ -z "${host}" && -n "${HOSTNAME:-}" ]]; then
+  host="${HOSTNAME}"
+fi
+user="${SUDO_USER:-${USER:-$(id -un)}}"
 
 if [[ -z "${host}" ]]; then
   echo "HOSTNAME is required" >&2
@@ -14,4 +17,4 @@ if [[ -z "${user}" ]]; then
   exit 1
 fi
 
-HOSTNAME="${host}" USER="${user}" darwin-rebuild switch --flake ".#${host}"
+HOSTNAME="${host}" USER="${user}" darwin-rebuild switch --impure --flake ".#${host}"
