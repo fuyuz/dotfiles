@@ -45,7 +45,7 @@
       };
     in
     {
-      darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
+      darwinConfigurations.personal = nix-darwin.lib.darwinSystem {
         inherit system specialArgs;
         modules = [
           ./nix/darwin
@@ -62,7 +62,25 @@
         ];
       };
 
+      darwinConfigurations.work = nix-darwin.lib.darwinSystem {
+        inherit system specialArgs;
+        modules = [
+          ./nix/darwin
+          ./nix/darwin/work.nix
+
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = specialArgs;
+              users.${username} = import ./nix/home;
+            };
+          }
+        ];
+      };
+
       # Expose the package set for convenience
-      packages.${system}.default = self.darwinConfigurations.${hostname}.system;
+      packages.${system}.default = self.darwinConfigurations.personal.system;
     };
 }

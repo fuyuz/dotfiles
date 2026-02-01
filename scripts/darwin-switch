@@ -10,6 +10,7 @@ if [[ -z "${host}" && -n "${HOSTNAME:-}" ]]; then
   host="${HOSTNAME}"
 fi
 user="${SUDO_USER:-${USER:-$(id -un)}}"
+profile="${PROFILE:-personal}"
 
 if [[ -z "${host}" ]]; then
   echo "HOSTNAME is required" >&2
@@ -21,4 +22,4 @@ if [[ -z "${user}" ]]; then
   exit 1
 fi
 
-HOSTNAME="${host}" USER="${user}" darwin-rebuild switch --impure --flake ".#${host}"
+HOSTNAME="${host}" USER="${user}" darwin-rebuild switch --impure --flake ".#${profile}"
