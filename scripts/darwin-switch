@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+host="${HOSTNAME:-$(hostname -s)}"
+user="${USER:-$(id -un)}"
+
+if [[ -z "${host}" ]]; then
+  echo "HOSTNAME is required" >&2
+  exit 1
+fi
+
+if [[ -z "${user}" ]]; then
+  echo "USER is required" >&2
+  exit 1
+fi
+
+HOSTNAME="${host}" USER="${user}" darwin-rebuild switch --flake ".#${host}"
