@@ -35,6 +35,9 @@
 
       # Utilities
       "hammerspoon"
+
+      # Virtualization
+      "parallels"
     ];
 
     # Mac App Store apps (requires `mas` CLI)

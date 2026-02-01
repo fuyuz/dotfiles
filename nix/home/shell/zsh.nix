@@ -42,43 +42,13 @@
       cat = "bat --paging=never";
       top = "btop";
 
-      # wezterm
-      wi = "wezterm imgcat";
-
-      # lazygit
-      lg = "lazygit";
-
-      # claude
-      yolo = "claude --dangerously-skip-permissions";
-      cc = "claude code";
-
-      # opencode
-      oc = "opencode";
-
-      # git abbreviations as aliases (since zsh-abbr is not in home-manager)
-      g = "git";
-      gp = "git push";
-      gpf = "git push --force-with-lease";
-      gs = "git switch";
-      gbc = "git switch -c";
-      gco = "git checkout";
-      gfa = "git fetch --all";
-
-      # github cli
-      ghp = "gh pr";
-      ghpc = "gh pr create";
-      ghpl = "gh pr list";
-      ghpv = "gh pr view";
-      ghps = "gh pr status";
-      ghi = "gh issue";
-      ghil = "gh issue list";
-      ghiv = "gh issue view";
-      ghis = "gh issue status";
-      ghpr = "gh search prs --review-requested=@me --state=open";
-      gd = "gh dash";
     };
 
     initContent = ''
+      # zsh-abbr
+      source ${pkgs.zsh-abbr}/share/zsh/zsh-abbr/zsh-abbr.zsh
+      ABBR_FORCE=1 ABBR_QUIET=1 abbr load
+
       # Load local zshrc if it exists
       [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 

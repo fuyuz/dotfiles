@@ -1,0 +1,24 @@
+abbr oc=opencode
+abbr cc=claude
+abbr g=git
+abbr gp='git push'
+abbr gpf='git push --force-with-lease'
+abbr gs='git switch'
+abbr gbc='git switch -c'
+abbr gco='git checkout'
+abbr gfa='git fetch --all'
+abbr wi='wezterm imgcat'
+abbr lg=lazygit
+abbr yolo='claude --dangerously-skip-permissions'
+abbr wineja='env LANG=ja_JP.UTF-8 LC_ALL=ja_JP.UTF-8 LC_CTYPE=ja_JP.UTF-8 wine'
+abbr ghp='gh pr'
+abbr ghpc='gh pr create'
+abbr ghpl='gh pr list'
+abbr ghpv='gh pr view'
+abbr ghps='gh pr status'
+abbr ghi='gh issue'
+abbr ghil='gh issue list'
+abbr ghiv='gh issue view'
+abbr ghis='gh issue status'
+abbr ghpr='gh search prs --review-requested=@me --state=open'
+abbr gd='gh dash'

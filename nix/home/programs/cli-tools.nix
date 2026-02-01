@@ -23,6 +23,7 @@ in
   home.packages = with pkgs; [
     # Terminal
     inputs.wezterm.packages.${system}.default
+    zsh-abbr
 
     # File utilities
     fd
@@ -62,6 +63,7 @@ in
 
     # Documentation
     glow
+
 
     # GitHub PR review TUI
     octorus
