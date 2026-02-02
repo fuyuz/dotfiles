@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [[ "${EUID}" -ne 0 ]]; then
-  exec sudo "$0" "$@"
+  exec sudo PROFILE="${PROFILE:-personal}" "$0" "$@"
 fi
 
 host="$(scutil --get LocalHostName 2>/dev/null || hostname -s || echo "")"

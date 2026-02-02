@@ -15,7 +15,10 @@
     "jetbrains-toolbox"
 
     # Development
-    "docker"
+    "docker-desktop"
+
+    # Design
+    "figma"
 
     # Utilities
     "hammerspoon"
