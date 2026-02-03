@@ -22,5 +22,6 @@
 
     # Utilities
     "hammerspoon"
+    "logi-options+"
   ];
 }

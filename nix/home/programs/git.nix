@@ -10,6 +10,7 @@
       "*.swo"
       ".idea/"
       ".vscode/"
+      ".claude/settings.local.json"
       "node_modules/"
       ".env"
       ".env.local"

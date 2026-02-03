@@ -35,6 +35,7 @@
 
       # Utilities
       "hammerspoon"
+      "logi-options+"
 
       # Virtualization
       "parallels"
