@@ -48,6 +48,7 @@ in
     # Development tools
     gh
     gh-dash
+    awscli2
 
     # JavaScript runtime
     bun

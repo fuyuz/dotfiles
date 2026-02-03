@@ -145,6 +145,7 @@ require("lazy").setup({
 			spec = {
 				{ "<leader>c", group = "[C]ode", mode = { "n", "x" } },
 				{ "<leader>d", group = "[D]ocument" },
+				{ "<leader>i", group = "A[I]", mode = { "n", "v" } },
 				{ "<leader>r", group = "[R]ename" },
 				{ "<leader>s", group = "[S]earch" },
 				{ "<leader>w", group = "[W]orkspace" },
@@ -693,6 +694,16 @@ require("lazy").setup({
 	{
 		"github/copilot.vim",
 		lazy = false,
+	},
+	{
+		"ThePrimeagen/99",
+		config = function()
+			local _99 = require("99")
+			_99.setup({})
+			vim.keymap.set("n", "<leader>ii", _99.fill_in_function, { desc = "A[I] fill in function" })
+			vim.keymap.set("v", "<leader>iv", _99.visual, { desc = "AI [V]isual" })
+			vim.keymap.set("n", "<leader>is", _99.stop_all_requests, { desc = "AI [S]top all requests" })
+		end,
 	},
 }, {
 	ui = {
