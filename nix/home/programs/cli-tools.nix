@@ -3,14 +3,14 @@
 let
   octorus = pkgs.rustPlatform.buildRustPackage rec {
     pname = "octorus";
-    version = "unstable-2025-01-31";
+    version = "unstable-2025-02-04";
     src = pkgs.fetchFromGitHub {
       owner = "ushironoko";
       repo = "octorus";
-      rev = "114497f889b664c63f476a1460ca4a088e4822e1";
-      hash = "sha256-SZNnmqCX80taO+RY8eEM0JUKBBXZSktbyJUoD2zQVzw=";
+      rev = "4f8bf1856ad25e90f1fb57055bb226bb33d39cd6";
+      hash = "sha256-gI+KyamMp7saKzVABPMhM2bE2iFwNmEMnVQAVa1wcY0=";
     };
-    cargoHash = "sha256-yB3GmRkxuaPX6+TTY1/xFv3sP0t4ZXxZgoDh7BnWGZo=";
+    cargoHash = "sha256-CkUdgMq9YbH7KvNbAGDun/XZbRs4nbkX4/ihypkeyAg=";
     meta = {
       description = "TUI PR review tool for GitHub";
       homepage = "https://github.com/ushironoko/octorus";
