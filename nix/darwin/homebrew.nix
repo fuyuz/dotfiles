@@ -24,6 +24,7 @@
       # Browsers
       "arc"
       "google-chrome"
+      "vivaldi"
 
       # Communication
       "slack"
