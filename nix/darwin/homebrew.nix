@@ -19,7 +19,7 @@
     # CLI tools that are better installed via Homebrew (not in nixpkgs or issues)
     brews = [ ];
 
-    # GUI applications
+    # GUI applications (common to all configurations)
     casks = [
       # Browsers
       "arc"
@@ -37,9 +37,6 @@
       # Utilities
       "hammerspoon"
       "logi-options+"
-
-      # Virtualization
-      "parallels"
     ];
 
     # Mac App Store apps (requires `mas` CLI)

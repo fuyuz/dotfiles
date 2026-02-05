@@ -51,6 +51,7 @@
         inherit system specialArgs;
         modules = [
           ./nix/darwin
+          ./nix/darwin/personal.nix
 
           home-manager.darwinModules.home-manager
           {

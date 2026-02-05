@@ -1,33 +1,16 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   homebrew.brews = [
     "needle"
   ];
 
-  homebrew.casks = lib.mkForce [
-    # Browsers
-    "arc"
-    "google-chrome"
-    "zen"
-
-    # Communication
-    "slack"
-
-    # Productivity
-    "1password"
-    "raycast"
-    "jetbrains-toolbox"
-
+  homebrew.casks = [
     # Development
     "docker-desktop"
 
     # Design
     "figma"
-
-    # Utilities
-    "hammerspoon"
-    "logi-options+"
   ];
 
   # Create symlink for needle in /opt/homebrew/bin
