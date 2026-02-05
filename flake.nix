@@ -20,7 +20,14 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nix-darwin,
+      home-manager,
+      ...
+    }:
     let
       system = "aarch64-darwin";
       hostname =
@@ -33,11 +40,6 @@
           envUser = builtins.getEnv "USER";
         in
         if envUser != "" then envUser else throw "USER is required";
-
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
 
       specialArgs = {
         inherit inputs username system;
@@ -82,5 +84,8 @@
 
       # Expose the package set for convenience
       packages.${system}.default = self.darwinConfigurations.personal.system;
+
+      # Formatter for `nix fmt`
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt-tree;
     };
 }

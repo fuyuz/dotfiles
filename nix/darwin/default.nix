@@ -11,13 +11,20 @@
   # Nix configuration
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
     };
     # Garbage collection
     gc = {
       automatic = true;
-      interval = { Weekday = 0; Hour = 2; Minute = 0; };
+      interval = {
+        Weekday = 0;
+        Hour = 2;
+        Minute = 0;
+      };
       options = "--delete-older-than 30d";
     };
   };
@@ -70,7 +77,6 @@
     name = username;
     home = "/Users/${username}";
   };
-
 
   # Allow TouchID for sudo (new API)
   security.pam.services.sudo_local.touchIdAuth = true;

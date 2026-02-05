@@ -1,4 +1,10 @@
-{ pkgs, lib, inputs, system, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  system,
+  ...
+}:
 
 let
   octorus = pkgs.rustPlatform.buildRustPackage rec {
@@ -64,7 +70,6 @@ in
 
     # Documentation
     glow
-
 
     # GitHub PR review TUI
     octorus

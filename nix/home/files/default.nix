@@ -22,8 +22,7 @@ in
       config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/claude/CLAUDE.md";
 
     "zsh-abbr/user-abbreviations" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/zsh-abbr/user-abbreviations";
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/zsh-abbr/user-abbreviations";
       force = true;
     };
   };
