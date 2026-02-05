@@ -9,7 +9,7 @@
     # Browsers
     "arc"
     "google-chrome"
-    "vivaldi"
+    "zen"
 
     # Communication
     "slack"
