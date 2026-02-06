@@ -33,8 +33,10 @@
     ]
   },
   "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "1"
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
+  "teammateMode": "in-process",
   "includeCoAuthoredBy": false,
   "cleanupPeriodDays": 30
 }
