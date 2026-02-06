@@ -48,8 +48,6 @@ in
     wget
     curl
     coreutils
-    gnused
-    gawk
 
     # Development tools
     gh
