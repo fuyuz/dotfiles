@@ -61,8 +61,8 @@ in
 
     # AI coding tools
     codex
-    claude-code
-    opencode
+    inputs.llm-agents.packages.${system}.claude-code
+    inputs.llm-agents.packages.${system}.opencode
 
     # Media tools
     ffmpeg
