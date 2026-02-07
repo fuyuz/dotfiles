@@ -10,7 +10,6 @@ abbr gfa='git fetch --all'
 abbr wi='wezterm imgcat'
 abbr lg=lazygit
 abbr yolo='claude --dangerously-skip-permissions'
-abbr wineja='env LANG=ja_JP.UTF-8 LC_ALL=ja_JP.UTF-8 LC_CTYPE=ja_JP.UTF-8 wine'
 abbr ghp='gh pr'
 abbr ghpc='gh pr create'
 abbr ghpl='gh pr list'
