@@ -21,6 +21,9 @@
 
     # GUI applications (common to all configurations)
     casks = [
+      # Android
+      "android-platform-tools"
+
       # Browsers
       "arc"
       "google-chrome"
