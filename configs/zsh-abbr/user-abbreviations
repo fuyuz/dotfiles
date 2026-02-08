@@ -9,6 +9,7 @@ abbr gco='git checkout'
 abbr gfa='git fetch --all'
 abbr wi='wezterm imgcat'
 abbr lg=lazygit
+abbr ju=jjui
 abbr yolo='claude --dangerously-skip-permissions'
 abbr ghp='gh pr'
 abbr ghpc='gh pr create'

@@ -53,6 +53,7 @@ in
     gh
     gh-dash
     jujutsu
+    jjui
     awscli2
 
     # JavaScript runtime
