@@ -46,6 +46,7 @@
 
     initContent = ''
       # zsh-abbr
+      ABBR_SET_EXPANSION_CURSOR=1
       source ${pkgs.zsh-abbr}/share/zsh/zsh-abbr/zsh-abbr.zsh
       ABBR_FORCE=1 ABBR_QUIET=1 abbr load
 
