@@ -21,13 +21,31 @@
         format = "[󱫌 $duration]($style) ";
       };
 
-      git_branch = {
-        format = "[$symbol$branch]($style) ";
+      custom.jj = {
+        when = "jj --ignore-working-copy root";
+        ignore_timeout = true;
+        symbol = "jj ";
+        style = "bold purple";
+        format = "[$symbol$output]($style) ";
+        command = ''
+          jj log --revisions @ --limit 1 --ignore-working-copy --no-graph --color always --template '
+            separate(" ",
+              bookmarks.map(|x| truncate_end(10, x.name(), "...")).join(" "),
+              tags.map(|x| truncate_end(10, x.name(), "...")).join(" "),
+              surround("\"", "\"", truncate_end(24, description.first_line(), "...")),
+              if(conflict, "conflict"),
+              if(divergent, "divergent"),
+              if(hidden, "hidden"),
+            )
+          '
+        '';
       };
 
-      git_status = {
-        format = "([$all_status$ahead_behind]($style)) ";
-      };
+      git_branch.disabled = true;
+      git_commit.disabled = true;
+      git_metrics.disabled = true;
+      git_state.disabled = true;
+      git_status.disabled = true;
     };
   };
 }

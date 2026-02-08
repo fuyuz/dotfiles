@@ -55,6 +55,9 @@
       # gh completion
       eval "$(gh completion -s zsh)"
 
+      # jj completion
+      eval "$(jj util completion zsh)"
+
       # pr function for octorus
       pr() {
         local repo
