@@ -52,6 +52,7 @@ in
     # Development tools
     gh
     gh-dash
+    jujutsu
     awscli2
 
     # JavaScript runtime
