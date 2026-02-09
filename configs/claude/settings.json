@@ -4,7 +4,7 @@
       "Bash(npm run *)",
       "Bash(yarn *)",
       "Bash(bun *)",
-      "Bash(git *)",
+      "Bash(jj *)",
       "Bash(brew *)",
       "Bash(docker *)",
       "Bash(cargo *)",
@@ -29,7 +29,17 @@
     "deny": [
       "Bash(curl:*)",
       "Bash(wget:*)",
-      "Bash(sudo *)"
+      "Bash(sudo *)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git checkout:*)",
+      "Bash(git switch:*)",
+      "Bash(git merge:*)",
+      "Bash(git rebase:*)",
+      "Bash(git branch:*)",
+      "Bash(git reset:*)",
+      "Bash(git stash:*)"
     ]
   },
   "env": {
