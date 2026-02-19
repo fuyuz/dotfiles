@@ -3,6 +3,7 @@
 {
   homebrew.brews = [
     "needle"
+    "pngpaste"
   ];
 
   homebrew.casks = [
