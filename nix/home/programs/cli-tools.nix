@@ -58,6 +58,7 @@ in
 
     # JavaScript runtime
     bun
+    playwright-test
 
     # AI coding tools
     codex
