@@ -111,14 +111,6 @@ config.window_frame = {
 	font_size = 13.0,
 }
 
-local function hash_string(str)
-	local hash = 5381
-	for i = 1, #str do
-		hash = ((hash * 33) + string.byte(str, i)) % 0xFFFFFFFF
-	end
-	return hash
-end
-
 local function hsl_to_rgb(h, s, l)
 	local r, g, b
 	if s == 0 then
@@ -151,11 +143,24 @@ local function hsl_to_rgb(h, s, l)
 	return math.floor(r * 255), math.floor(g * 255), math.floor(b * 255)
 end
 
+local function char_to_value(c)
+	local byte = string.byte(string.lower(c))
+	if byte >= string.byte("0") and byte <= string.byte("9") then
+		return byte - string.byte("0")
+	elseif byte >= string.byte("a") and byte <= string.byte("z") then
+		return byte - string.byte("a") + 10
+	end
+	return 0
+end
+
 local function workspace_color(name)
-	local hash = hash_string(name)
-	local hue = (hash % 360) / 360
-	local saturation = 0.7
-	local lightness = 0.3
+	local c1 = #name >= 1 and char_to_value(string.sub(name, 1, 1)) or 0
+	local c2 = #name >= 2 and char_to_value(string.sub(name, 2, 2)) or 0
+	local c3 = #name >= 3 and char_to_value(string.sub(name, 3, 3)) or 0
+	local golden = 0.618033988749895
+	local hue = ((c1 + c2 / 36) * golden) % 1.0
+	local saturation = 0.55 + (c3 / 35) * 0.25
+	local lightness = 0.4
 	local r, g, b = hsl_to_rgb(hue, saturation, lightness)
 	return string.format("#%02x%02x%02x", r, g, b)
 end
