@@ -21,6 +21,10 @@ in
     "claude/CLAUDE.md".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/claude/CLAUDE.md";
 
+    # Ghostty configuration (also used by cmux)
+    "ghostty/config".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/ghostty/config";
+
     "zsh-abbr/user-abbreviations" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/zsh-abbr/user-abbreviations";
       force = true;

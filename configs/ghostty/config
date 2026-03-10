@@ -1,0 +1,12 @@
+font-family = JetBrainsMono Nerd Font
+font-style = DemiBold
+font-size = 16
+
+theme = One Half Dark
+background = #000000
+background-opacity = 0.7
+background-blur = 20
+
+scrollbar = never
+window-save-state = always
+macos-titlebar-style = transparent

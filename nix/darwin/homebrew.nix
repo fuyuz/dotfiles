@@ -14,7 +14,9 @@
       brewfile = true;
     };
 
-    taps = [ ];
+    taps = [
+      "manaflow-ai/cmux"
+    ];
 
     # CLI tools that are better installed via Homebrew (not in nixpkgs or issues)
     brews = [ ];
@@ -36,6 +38,9 @@
       "1password"
       "raycast"
       "jetbrains-toolbox"
+
+      # Terminal
+      "manaflow-ai/cmux/cmux"
 
       # Utilities
       "hammerspoon"
