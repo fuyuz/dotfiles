@@ -86,6 +86,11 @@
     nerd-fonts.jetbrains-mono
   ];
 
+  # System-wide packages
+  environment.systemPackages = with pkgs; [
+    yq
+  ];
+
   # Programs
   programs.zsh.enable = true;
 }

@@ -37,9 +37,8 @@ in
     tree
     trash-cli
 
-    # JSON/YAML processing
+    # JSON processing
     jq
-    yq
 
     # System monitoring
     htop
@@ -55,6 +54,7 @@ in
     jujutsu
     jjui
     awscli2
+    actionlint
 
     # JavaScript runtime
     bun
