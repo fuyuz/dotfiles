@@ -3,6 +3,7 @@ font-style = DemiBold
 font-size = 14
 
 theme = One Half Dark
+background = #000000
 
 scrollbar = never
 window-save-state = always

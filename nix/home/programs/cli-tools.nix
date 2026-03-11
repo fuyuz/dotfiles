@@ -9,14 +9,14 @@
 let
   octorus = pkgs.rustPlatform.buildRustPackage rec {
     pname = "octorus";
-    version = "unstable-2026-02-10";
+    version = "0.5.7";
     src = pkgs.fetchFromGitHub {
       owner = "ushironoko";
       repo = "octorus";
-      rev = "f23068364b89934b080a1ceaf2fc22d09f9d915c";
-      hash = "sha256-sh5z3y+q2cAt8IXw5xHRHSuDMxPB+J6faRojSAhQJtk=";
+      rev = "dde8a6e10b21469b847e669caf6ffd47284e4bf2";
+      hash = "sha256-lwtS2wInfxdS62uXHSOV/81dd7ayiNnPCqcZPQLyqXs=";
     };
-    cargoHash = "sha256-ql2e4uhST6sSgqm8YhcdF0GScj8hjwcioIQvcEff7Wg=";
+    cargoHash = "sha256-I7AUA6zdHkZt9GWtDoXV4xwGN5hYsA3H6B48krss1EA=";
     meta = {
       description = "TUI PR review tool for GitHub";
       homepage = "https://github.com/ushironoko/octorus";
@@ -28,7 +28,6 @@ in
 {
   home.packages = with pkgs; [
     # Terminal
-    inputs.wezterm.packages.${system}.default
     zsh-abbr
 
     # File utilities
