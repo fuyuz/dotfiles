@@ -17,6 +17,7 @@ let
       hash = "sha256-lwtS2wInfxdS62uXHSOV/81dd7ayiNnPCqcZPQLyqXs=";
     };
     cargoHash = "sha256-I7AUA6zdHkZt9GWtDoXV4xwGN5hYsA3H6B48krss1EA=";
+    nativeBuildInputs = [ pkgs.git ];
     meta = {
       description = "TUI PR review tool for GitHub";
       homepage = "https://github.com/ushironoko/octorus";
