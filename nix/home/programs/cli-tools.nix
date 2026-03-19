@@ -134,11 +134,13 @@ in
       enable = true;
       enableZshIntegration = true;
       settings = {
+        filter_mode = "directory";
         filter_mode_shell_up_key_binding = "directory";
         search_mode = "fuzzy";
         max_history_length = 50000;
         sync.records = false;
       };
+      flags = [ "--disable-up-arrow" ];
     };
 
     # Direnv - per-directory environment
