@@ -36,8 +36,8 @@ if command -v nix &> /dev/null; then
     echo "=== Nix setup complete ==="
 else
     echo "Nix not detected. Using traditional symlink setup..."
-    echo "To use Nix, install it first:"
-    echo "  curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install"
+    echo "To use Nix, install Determinate Nix first:"
+    echo "  https://install.determinate.systems/determinate-pkg/stable/Universal"
     echo ""
     echo "Running legacy setup scripts..."
 

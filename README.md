@@ -49,9 +49,7 @@ dotfiles/
 
 ### 1. Determinate Nixをインストール
 
-```bash
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
-```
+[Download Determinate Nix (.pkg)](https://install.determinate.systems/determinate-pkg/stable/Universal)
 
 ### 2. リポジトリをクローン
 
