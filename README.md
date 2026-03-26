@@ -47,7 +47,7 @@ dotfiles/
 
 ## インストール
 
-### 1. Nixをインストール
+### 1. Determinate Nixをインストール
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
