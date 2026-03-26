@@ -9,14 +9,14 @@
 let
   octorus = pkgs.rustPlatform.buildRustPackage rec {
     pname = "octorus";
-    version = "0.5.7";
+    version = "0.5.8";
     src = pkgs.fetchFromGitHub {
       owner = "ushironoko";
       repo = "octorus";
-      rev = "dde8a6e10b21469b847e669caf6ffd47284e4bf2";
-      hash = "sha256-lwtS2wInfxdS62uXHSOV/81dd7ayiNnPCqcZPQLyqXs=";
+      rev = "v0.5.8";
+      hash = "sha256-hesjvtz+kRoUS0hH2NlpLDZKlnivxMNPATOgiW91sTk=";
     };
-    cargoHash = "sha256-I7AUA6zdHkZt9GWtDoXV4xwGN5hYsA3H6B48krss1EA=";
+    cargoHash = "sha256-ssH6GZFQT5mNRn7sYgDWZq9lunTLfCplHTtg5A+rqek=";
     nativeBuildInputs = [ pkgs.git ];
     meta = {
       description = "TUI PR review tool for GitHub";
@@ -144,10 +144,20 @@ in
     };
 
     # Direnv - per-directory environment
+    # Workaround: nixpkgs#486452 set CGO_ENABLED=0 but direnv's Makefile adds
+    # -linkmode=external on Darwin which requires cgo. Fixed in nixpkgs#502769
+    # but not yet in nixpkgs-unstable. Remove this override after flake update.
     direnv = {
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
+      package = pkgs.direnv.overrideAttrs (old: {
+        postPatch =
+          (old.postPatch or "")
+          + ''
+            substituteInPlace GNUmakefile --replace-fail " -linkmode=external" ""
+          '';
+      });
     };
   };
 
