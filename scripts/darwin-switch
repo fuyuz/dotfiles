@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [[ "${EUID}" -ne 0 ]]; then
-  exec sudo PROFILE="${PROFILE:-personal}" "$0" "$@"
+  exec sudo --preserve-env=PROFILE HOME="$HOME" "$0" "$@"
 fi
 
 host="$(scutil --get LocalHostName 2>/dev/null || hostname -s || echo "")"
@@ -22,4 +22,4 @@ if [[ -z "${user}" ]]; then
   exit 1
 fi
 
-HOSTNAME="${host}" USER="${user}" darwin-rebuild switch --impure --flake ".#${profile}"
+HOSTNAME="${host}" USER="${user}" nix run nix-darwin/master#darwin-rebuild -- switch --impure --flake ".#${profile}"
