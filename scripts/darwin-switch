@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [[ "${EUID}" -ne 0 ]]; then
-  exec sudo --preserve-env=PROFILE HOME="$HOME" "$0" "$@"
+  exec sudo -H --preserve-env=PROFILE "$0" "$@"
 fi
 
 host="$(scutil --get LocalHostName 2>/dev/null || hostname -s || echo "")"
@@ -22,4 +22,4 @@ if [[ -z "${user}" ]]; then
   exit 1
 fi
 
-HOSTNAME="${host}" USER="${user}" nix run nix-darwin/master#darwin-rebuild -- switch --impure --flake ".#${profile}"
+NIX_PATH="" HOSTNAME="${host}" USER="${user}" nix run nix-darwin/master#darwin-rebuild -- switch --impure --flake ".#${profile}" 2>&1 | grep -v "^warning: Using 'builtins.derivation'\|^warning: Nix search path entry"
