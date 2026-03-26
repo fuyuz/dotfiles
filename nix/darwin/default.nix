@@ -11,6 +11,8 @@
   # Nix configuration
   # Determinate Nix manages the daemon and nix.conf
   nix.enable = false;
+  nix.channel.enable = false;
+  documentation.enable = false;
 
   # System configuration
   system = {

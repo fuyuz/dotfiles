@@ -22,4 +22,5 @@ if [[ -z "${user}" ]]; then
   exit 1
 fi
 
-NIX_PATH="" HOSTNAME="${host}" USER="${user}" nix run nix-darwin/master#darwin-rebuild -- switch --impure --flake ".#${profile}"
+mkdir -p /nix/var/nix/profiles/per-user/root/channels
+HOSTNAME="${host}" USER="${user}" nix run nix-darwin/master#darwin-rebuild -- switch --impure --flake ".#${profile}"

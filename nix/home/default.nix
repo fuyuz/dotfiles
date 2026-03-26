@@ -16,6 +16,8 @@
     stateVersion = "24.05";
   };
 
+  manual.manpages.enable = false;
+
   # Let home-manager manage itself
   programs.home-manager.enable = true;
 }
