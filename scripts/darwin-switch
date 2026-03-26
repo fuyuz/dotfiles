@@ -22,4 +22,4 @@ if [[ -z "${user}" ]]; then
   exit 1
 fi
 
-NIX_PATH="" HOSTNAME="${host}" USER="${user}" nix run nix-darwin/master#darwin-rebuild -- switch --impure --flake ".#${profile}" 2>&1 | grep -v "^warning: Using 'builtins.derivation'\|^warning: Nix search path entry"
+NIX_PATH="" HOSTNAME="${host}" USER="${user}" nix run nix-darwin/master#darwin-rebuild -- switch --impure --flake ".#${profile}"
