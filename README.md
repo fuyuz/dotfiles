@@ -50,7 +50,7 @@ dotfiles/
 ### 1. Nixをインストール
 
 ```bash
-sh <(curl -L https://nixos.org/nix/install)
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
 ### 2. リポジトリをクローン
