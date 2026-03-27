@@ -40,5 +40,9 @@ in
     # IdeaVim configuration
     ".ideavimrc".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/ideavim/.ideavimrc";
+
+    # Claude Code keybindings
+    ".claude/keybindings.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/claude/keybindings.json";
   };
 }
