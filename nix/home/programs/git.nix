@@ -3,6 +3,8 @@
 {
   programs.git = {
     enable = true;
+    userName = "fuyuz";
+    userEmail = "182488764+fuyuz@users.noreply.github.com";
     lfs.enable = true;
     signing.format = null;
 
