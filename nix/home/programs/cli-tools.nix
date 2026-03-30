@@ -143,21 +143,10 @@ in
       flags = [ "--disable-up-arrow" ];
     };
 
-    # Direnv - per-directory environment
-    # Workaround: nixpkgs#486452 set CGO_ENABLED=0 but direnv's Makefile adds
-    # -linkmode=external on Darwin which requires cgo. Fixed in nixpkgs#502769
-    # but not yet in nixpkgs-unstable. Remove this override after flake update.
     direnv = {
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
-      package = pkgs.direnv.overrideAttrs (old: {
-        postPatch =
-          (old.postPatch or "")
-          + ''
-            substituteInPlace GNUmakefile --replace-fail " -linkmode=external" ""
-          '';
-      });
     };
   };
 
