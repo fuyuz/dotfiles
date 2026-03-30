@@ -148,6 +148,11 @@ in
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
+
+    java = {
+      enable = true;
+      package = pkgs.jdk17;
+    };
   };
 
   # Run 'or init' on first octorus installation
