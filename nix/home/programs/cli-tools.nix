@@ -54,6 +54,7 @@ in
     jujutsu
     jjui
     awscli2
+    google-cloud-sdk
     actionlint
 
     # JavaScript runtime

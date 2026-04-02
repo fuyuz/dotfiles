@@ -31,9 +31,6 @@
       "google-chrome"
       "zen"
 
-      # Cloud
-      "google-cloud-sdk"
-
       # Communication
       "slack"
 

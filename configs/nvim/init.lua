@@ -699,9 +699,11 @@ require("lazy").setup({
 		config = function()
 			local _99 = require("99")
 			_99.setup({})
-			vim.keymap.set("n", "<leader>ii", _99.fill_in_function, { desc = "A[I] fill in function" })
-			vim.keymap.set("v", "<leader>iv", _99.visual, { desc = "AI [V]isual" })
-			vim.keymap.set("n", "<leader>is", _99.stop_all_requests, { desc = "AI [S]top all requests" })
+			vim.keymap.set("n", "<leader>9s", _99.search, { desc = "99 [S]earch" })
+			vim.keymap.set("n", "<leader>9v", _99.vibe, { desc = "99 [V]ibe" })
+			vim.keymap.set("v", "<leader>9r", _99.visual, { desc = "99 Visual [R]eplace" })
+			vim.keymap.set("n", "<leader>9x", _99.stop_all_requests, { desc = "99 Stop all [X]" })
+			vim.keymap.set("n", "<leader>9o", _99.open, { desc = "99 [O]pen results" })
 		end,
 	},
 }, {
