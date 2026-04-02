@@ -56,6 +56,7 @@ in
     awscli2
     google-cloud-sdk
     actionlint
+    devenv
 
     # JavaScript runtime
     bun
