@@ -1,0 +1,4 @@
+#!/bin/sh
+# Wrapper for git diff.external: translates git's 7-arg format to sem diff
+# Args: path old-file old-hex old-mode new-file new-hex new-mode
+exec /opt/homebrew/bin/sem diff -v "$2" "$5"

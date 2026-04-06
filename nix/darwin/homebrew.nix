@@ -19,7 +19,9 @@
     ];
 
     # CLI tools that are better installed via Homebrew (not in nixpkgs or issues)
-    brews = [ ];
+    brews = [
+      "sem-cli"
+    ];
 
     # GUI applications (common to all configurations)
     casks = [
