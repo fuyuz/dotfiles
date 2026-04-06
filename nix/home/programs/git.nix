@@ -29,7 +29,6 @@
       rebase.autoStash = true;
       fetch.prune = true;
       diff.colorMoved = "default";
-      diff.external = "sem-diff-wrapper";
       merge.conflictstyle = "diff3";
 
       include.path = "~/.gitconfig.local";

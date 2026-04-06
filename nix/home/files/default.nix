@@ -33,9 +33,6 @@ in
 
   # Home directory files
   home.file = {
-    # sem-diff-wrapper for git diff.external
-    ".local/bin/sem-diff-wrapper".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/bin/sem-diff-wrapper";
     # Hammerspoon configuration
     ".hammerspoon/init.lua".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/hammerspoon/init.lua";
