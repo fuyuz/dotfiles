@@ -9,6 +9,8 @@ in
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+    withRuby = false;
+    withPython3 = false;
 
     # We use lazy.nvim for plugin management, so we don't need nix-managed plugins
     # Just ensure the binary is available and link our config
