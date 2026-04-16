@@ -51,6 +51,7 @@ in
     # Development tools
     gh
     gh-dash
+    tig
     jujutsu
     jjui
     awscli2
