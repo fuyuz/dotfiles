@@ -64,8 +64,7 @@ in
     playwright-test
 
     # AI coding tools
-    codex
-    gemini-cli
+    inputs.llm-agents.packages.${system}.codex
     inputs.llm-agents.packages.${system}.claude-code
     inputs.llm-agents.packages.${system}.opencode
 
