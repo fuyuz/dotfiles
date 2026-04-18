@@ -2,8 +2,8 @@
 
 {
   homebrew.casks = [
-    "gstreamer-runtime"
-    "wine-stable"
+    "discord"
+    "steam"
 
     # Virtualization
     "parallels"
