@@ -63,22 +63,6 @@
 
       # jj completion
       eval "$(jj util completion zsh)"
-
-      # pr function for octorus
-      pr() {
-        local repo
-        repo=$(gh repo view --json owner,name -q ".owner.login + \"/\" + .name") || return 1
-        local pr_number
-        if [ -n "$1" ]; then
-          pr_number="$1"
-        else
-          pr_number=$(gh pr view --json number -q ".number" 2>/dev/null) || {
-            echo "PR番号を取得できませんでした。PR番号を指定してください。"
-            return 1
-          }
-        fi
-        or --repo "$repo" --pr "$pr_number"
-      }
     '';
 
     oh-my-zsh = {

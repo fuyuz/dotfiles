@@ -72,8 +72,8 @@ keybindings:
     - key: O
       command: gh pr checkout {{.PrNumber}}
     - key: d
-      name: review (octorus)
-      command: "or --repo {{.RepoName}} --pr {{.PrNumber}}"
+      name: semantic diff
+      command: "gh pr diff {{.PrNumber}} --repo {{.RepoName}} | sem diff --patch"
   issues:
     - key: O
       command: gh issue develop {{.IssueNumber}}

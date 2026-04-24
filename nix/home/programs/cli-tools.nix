@@ -1,31 +1,10 @@
 {
   pkgs,
-  lib,
   inputs,
   system,
   ...
 }:
 
-let
-  octorus = pkgs.rustPlatform.buildRustPackage rec {
-    pname = "octorus";
-    version = "0.5.8";
-    src = pkgs.fetchFromGitHub {
-      owner = "ushironoko";
-      repo = "octorus";
-      rev = "v0.5.8";
-      hash = "sha256-hesjvtz+kRoUS0hH2NlpLDZKlnivxMNPATOgiW91sTk=";
-    };
-    cargoHash = "sha256-ssH6GZFQT5mNRn7sYgDWZq9lunTLfCplHTtg5A+rqek=";
-    nativeBuildInputs = [ pkgs.git ];
-    meta = {
-      description = "TUI PR review tool for GitHub";
-      homepage = "https://github.com/ushironoko/octorus";
-      license = lib.licenses.mit;
-      mainProgram = "or";
-    };
-  };
-in
 {
   home.packages = with pkgs; [
     # Terminal
@@ -75,9 +54,6 @@ in
 
     # Documentation
     glow
-
-    # GitHub PR review TUI
-    octorus
 
     # Archive tools
     unzip
@@ -157,11 +133,4 @@ in
       package = pkgs.jdk17;
     };
   };
-
-  # Run 'or init' on first octorus installation
-  home.activation.octorusInit = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ ! -d "$HOME/.config/octorus" ]; then
-      run ${octorus}/bin/or init || true
-    fi
-  '';
 }
