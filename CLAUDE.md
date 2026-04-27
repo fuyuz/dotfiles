@@ -12,8 +12,8 @@ macOS dotfiles for Apple Silicon (aarch64-darwin), declaratively managed with **
 # Apply configuration changes (auto-detects hostname, defaults to personal profile)
 ./scripts/darwin-switch
 
-# Apply with explicit profile
-PROFILE=work ./scripts/darwin-switch
+# Apply with explicit profile (only needed on first run; subsequent runs read DOTFILE_PROFILE from the system env)
+DOTFILE_PROFILE=work ./scripts/darwin-switch
 
 # Update all flake inputs
 nix flake update

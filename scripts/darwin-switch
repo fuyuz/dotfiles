@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [[ "${EUID}" -ne 0 ]]; then
-  exec sudo -H --preserve-env=PROFILE "$0" "$@"
+  exec sudo -H --preserve-env=DOTFILE_PROFILE "$0" "$@"
 fi
 
 host="$(scutil --get LocalHostName 2>/dev/null || hostname -s || echo "")"
@@ -10,7 +10,7 @@ if [[ -z "${host}" && -n "${HOSTNAME:-}" ]]; then
   host="${HOSTNAME}"
 fi
 user="${SUDO_USER:-${USER:-$(id -un)}}"
-profile="${PROFILE:-personal}"
+profile="${DOTFILE_PROFILE:-personal}"
 
 if [[ -z "${host}" ]]; then
   echo "HOSTNAME is required" >&2

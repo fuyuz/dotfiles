@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  environment.variables.DOTFILE_PROFILE = "work";
+
   homebrew.brews = [
     "needle"
     "pngpaste"
