@@ -1,5 +1,5 @@
 -- Window half/half bindings
-local hyper = {"alt"}
+local hyper = {"option"}
 
 local function move_to_half(side)
   local win = hs.window.focusedWindow()
