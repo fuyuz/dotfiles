@@ -73,7 +73,7 @@ keybindings:
       command: gh pr checkout {{.PrNumber}}
     - key: d
       name: semantic diff
-      command: "gh pr diff {{.PrNumber}} --repo {{.RepoName}} | sem diff --patch"
+      command: "zsh -c 'sid=$(cmux new-pane --direction right | grep -oE \"surface:[0-9]+\"); cmux send --surface \"$sid\" \"gh pr diff {{.PrNumber}} --repo {{.RepoName}} | sem diff --patch --verbose --color always | less -R\\n\"'"
   issues:
     - key: O
       command: gh issue develop {{.IssueNumber}}
