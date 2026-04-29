@@ -23,4 +23,4 @@ if [[ -z "${user}" ]]; then
 fi
 
 mkdir -p /nix/var/nix/profiles/per-user/root/channels
-HOSTNAME="${host}" USER="${user}" nix run nix-darwin/master#darwin-rebuild -- switch --impure --flake ".#${profile}"
+HOSTNAME="${host}" USER="${user}" nix run --accept-flake-config nix-darwin/master#darwin-rebuild -- switch --impure --flake ".#${profile}"
