@@ -8,16 +8,6 @@
   # Allow unfree packages (e.g., claude-code)
   nixpkgs.config.allowUnfree = true;
 
-  # TODO: remove once https://github.com/NixOS/nixpkgs/pull/513081 lands in nixpkgs-unstable.
-  # Workaround for direnv 2.37.1 testsuite hanging on aarch64-darwin (macOS Tahoe).
-  nixpkgs.overlays = [
-    (final: prev: {
-      direnv = prev.direnv.overrideAttrs (old: {
-        doCheck = false;
-      });
-    })
-  ];
-
   # Nix configuration
   # Determinate Nix manages the daemon and nix.conf
   nix.enable = false;
