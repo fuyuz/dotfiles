@@ -25,6 +25,10 @@ in
     "ghostty/config".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/ghostty/config";
 
+    # Zed configuration
+    "zed/settings.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/zed/settings.json";
+
     "zsh-abbr/user-abbreviations" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/zsh-abbr/user-abbreviations";
       force = true;
