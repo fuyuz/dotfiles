@@ -8,3 +8,4 @@ background = #000000
 scrollbar = never
 window-save-state = always
 macos-titlebar-style = transparent
+unfocused-split-opacity = 1
