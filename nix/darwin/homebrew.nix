@@ -36,6 +36,9 @@
       # Communication
       "slack"
 
+      # Editor
+      "zed"
+
       # Productivity
       "1password"
       "raycast"
