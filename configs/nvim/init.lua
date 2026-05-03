@@ -3,6 +3,12 @@ vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
+-- Disable unused language providers
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_node_provider = 0
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -70,7 +76,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
-		vim.highlight.on_yank()
+		(vim.hl or vim.highlight).on_yank()
 	end,
 })
 
@@ -228,7 +234,16 @@ require("lazy").setup({
 			{ "williamboman/mason.nvim", config = true },
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			{ "j-hui/fidget.nvim", opts = {} },
+			{
+				"j-hui/fidget.nvim",
+				opts = {
+					notification = {
+						window = {
+							avoid = { "NvimTree" },
+						},
+					},
+				},
+			},
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
@@ -257,7 +272,7 @@ require("lazy").setup({
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+					if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
 						local highlight_augroup =
 							vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
 						vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -280,7 +295,7 @@ require("lazy").setup({
 							end,
 						})
 					end
-					if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+					if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
 						map("<leader>th", function()
 							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 						end, "[T]oggle Inlay [H]ints")
@@ -307,16 +322,19 @@ require("lazy").setup({
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
+			-- Register per-server config (vim.lsp.config replaces require("lspconfig")[name].setup)
+			vim.lsp.config("*", { capabilities = capabilities })
+			for server_name, server in pairs(servers) do
+				vim.lsp.config(server_name, server)
+			end
+
 			require("mason-lspconfig").setup({
 				automatic_installation = true,
-				handlers = {
-					function(server_name)
-						local server = servers[server_name] or {}
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-						require("lspconfig")[server_name].setup(server)
-					end,
-				},
+				automatic_enable = true,
 			})
+
+			-- LSPs not managed by Mason (installed system-wide via Nix)
+			vim.lsp.enable("gleam")
 		end,
 	},
 
@@ -661,37 +679,19 @@ require("lazy").setup({
 		},
 	},
 	{
-		"wojciech-kulik/xcodebuild.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"MunifTanjim/nui.nvim",
-			"nvim-tree/nvim-tree.lua", -- (optional) to manage project files
-			"stevearc/oil.nvim", -- (optional) to manage project files
-			"nvim-treesitter/nvim-treesitter", -- (optional) for Quick tests support (required Swift parser)
-		},
-		config = function()
-			require("xcodebuild").setup({
-				-- put some options here or leave it empty to use default settings
-			})
-		end,
-	},
-	{
-		"github/copilot.vim",
-		lazy = false,
-	},
-	{
 		"ThePrimeagen/99",
 		config = function()
 			local _99 = require("99")
 			_99.setup({})
 			vim.keymap.set("n", "<leader>9s", _99.search, { desc = "99 [S]earch" })
-			vim.keymap.set("n", "<leader>9v", _99.vibe, { desc = "99 [V]ibe" })
 			vim.keymap.set("v", "<leader>9r", _99.visual, { desc = "99 Visual [R]eplace" })
 			vim.keymap.set("n", "<leader>9x", _99.stop_all_requests, { desc = "99 Stop all [X]" })
-			vim.keymap.set("n", "<leader>9o", _99.open, { desc = "99 [O]pen results" })
+			vim.keymap.set("n", "<leader>9o", _99.previous_requests_to_qfix, { desc = "99 [O]pen previous requests" })
+			vim.keymap.set("n", "<leader>9l", _99.view_logs, { desc = "99 View [L]ogs" })
 		end,
 	},
 }, {
+	rocks = { enabled = false },
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
 		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
