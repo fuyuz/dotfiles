@@ -42,6 +42,10 @@
     bun
     playwright-test
 
+    # Gleam (compiler ships its own LSP via `gleam lsp`)
+    gleam
+    erlang_27
+
     # AI coding tools
     inputs.llm-agents.packages.${system}.codex
     inputs.llm-agents.packages.${system}.claude-code
