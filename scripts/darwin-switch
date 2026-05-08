@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [[ "${EUID}" -ne 0 ]]; then
-  exec sudo -H --preserve-env=DOTFILE_PROFILE "$0" "$@"
+  exec sudo -H --preserve-env=DOTFILE_PROFILE,NIX_CONFIG "$0" "$@"
 fi
 
 host="$(scutil --get LocalHostName 2>/dev/null || hostname -s || echo "")"
