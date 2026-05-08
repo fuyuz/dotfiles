@@ -55,6 +55,11 @@
       source ${pkgs.zsh-abbr}/share/zsh/zsh-abbr/zsh-abbr.zsh
       ABBR_FORCE=1 ABBR_QUIET=1 abbr load
 
+      # Nix GitHub API auth (avoids rate limiting on flake update)
+      if command -v gh &>/dev/null && gh auth token &>/dev/null; then
+        export NIX_CONFIG="access-tokens = github.com=$(gh auth token)"
+      fi
+
       # Load local zshrc if it exists
       [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
