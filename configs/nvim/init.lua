@@ -678,18 +678,6 @@ require("lazy").setup({
 			"nvim-telescope/telescope.nvim",
 		},
 	},
-	{
-		"ThePrimeagen/99",
-		config = function()
-			local _99 = require("99")
-			_99.setup({})
-			vim.keymap.set("n", "<leader>9s", _99.search, { desc = "99 [S]earch" })
-			vim.keymap.set("v", "<leader>9r", _99.visual, { desc = "99 Visual [R]eplace" })
-			vim.keymap.set("n", "<leader>9x", _99.stop_all_requests, { desc = "99 Stop all [X]" })
-			vim.keymap.set("n", "<leader>9o", _99.previous_requests_to_qfix, { desc = "99 [O]pen previous requests" })
-			vim.keymap.set("n", "<leader>9l", _99.view_logs, { desc = "99 View [L]ogs" })
-		end,
-	},
 }, {
 	rocks = { enabled = false },
 	ui = {

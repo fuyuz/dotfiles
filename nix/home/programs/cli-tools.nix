@@ -46,6 +46,9 @@
     gleam
     erlang_27
 
+    # Neovim treesitter
+    tree-sitter
+
     # AI coding tools
     inputs.llm-agents.packages.${system}.codex
     inputs.llm-agents.packages.${system}.claude-code
