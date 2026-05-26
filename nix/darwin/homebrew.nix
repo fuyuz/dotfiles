@@ -37,6 +37,7 @@
       "slack"
 
       # Editor
+      "cursor"
       "zed"
 
       # Productivity
