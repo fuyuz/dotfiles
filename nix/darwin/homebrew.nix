@@ -37,6 +37,7 @@
       "slack"
 
       # Editor
+      "codex-app"
       "cursor"
       "zed"
 
