@@ -35,6 +35,7 @@
     jjui
     awscli2
     google-cloud-sdk
+    terraform
     actionlint
     devenv
 
