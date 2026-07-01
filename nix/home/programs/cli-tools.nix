@@ -45,7 +45,7 @@
 
     # Gleam (compiler ships its own LSP via `gleam lsp`)
     gleam
-    erlang_27
+    beam27Packages.erlang
 
     # Neovim treesitter
     tree-sitter
