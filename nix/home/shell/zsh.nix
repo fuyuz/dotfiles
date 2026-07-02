@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  # JetBrains Toolbox CLI scripts (was in a Toolbox-generated ~/.zprofile)
+  home.sessionPath = [
+    "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+  ];
+
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -34,10 +39,6 @@
       v = "nvim";
       vim = "nvim";
 
-      # safety aliases
-      rm = "trash";
-      cp = "cp -i";
-      mv = "mv -i";
       mkdir = "mkdir -p";
 
       # cat/top replacements

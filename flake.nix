@@ -23,6 +23,12 @@
       url = "github:numtide/llm-agents.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Pinned to a release tag; bump manually to update (nix flake update won't move it)
+    herdr = {
+      url = "github:ogulcancelik/herdr/v0.7.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -63,6 +69,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              backupFileExtension = "hm-backup";
               extraSpecialArgs = specialArgs;
               users.${username} = import ./nix/home;
             };
@@ -81,6 +88,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              backupFileExtension = "hm-backup";
               extraSpecialArgs = specialArgs;
               users.${username} = import ./nix/home;
             };

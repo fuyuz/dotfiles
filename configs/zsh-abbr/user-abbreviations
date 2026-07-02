@@ -1,3 +1,6 @@
+abbr rm=trash
+abbr cp='cp -i'
+abbr mv='mv -i'
 abbr oc=opencode
 abbr cc=claude
 abbr g=git

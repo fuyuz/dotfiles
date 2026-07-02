@@ -8,6 +8,7 @@
 {
   home.packages = with pkgs; [
     # Terminal
+    wezterm
     zsh-abbr
 
     # File utilities
@@ -55,6 +56,7 @@
     inputs.llm-agents.packages.${system}.claude-code
     inputs.llm-agents.packages.${system}.junie
     inputs.llm-agents.packages.${system}.opencode
+    inputs.herdr.packages.${system}.default
 
     # Media tools
     ffmpeg
@@ -73,6 +75,7 @@
     fzf = {
       enable = true;
       enableZshIntegration = true;
+      historyWidget.command = "";
       defaultCommand = "fd --type f --hidden --follow --exclude .git";
       defaultOptions = [
         "--height 40%"

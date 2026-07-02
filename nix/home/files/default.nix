@@ -25,6 +25,10 @@ in
     "ghostty/config".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/ghostty/config";
 
+    # herdr configuration
+    "herdr/config.toml".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/herdr/config.toml";
+
     # Zed configuration
     "zed/settings.json".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/zed/settings.json";
