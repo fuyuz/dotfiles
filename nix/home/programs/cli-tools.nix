@@ -8,7 +8,6 @@
 {
   home.packages = with pkgs; [
     # Terminal
-    wezterm
     zsh-abbr
 
     # File utilities
@@ -56,6 +55,7 @@
     inputs.llm-agents.packages.${system}.claude-code
     inputs.llm-agents.packages.${system}.junie
     inputs.llm-agents.packages.${system}.opencode
+    inputs.llm-agents.packages.${system}.cursor-agent
     inputs.herdr.packages.${system}.default
 
     # Media tools
@@ -118,6 +118,13 @@
 
     # Lazygit - terminal UI for git
     lazygit.enable = true;
+
+    # Hunk - diff viewer for agent-authored changesets
+    # (config.toml is symlinked from configs/ via files/default.nix, not `settings`)
+    hunk = {
+      enable = true;
+      enableClaudeIntegration = true;
+    };
 
     # Atuin - shell history
     atuin = {

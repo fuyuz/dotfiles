@@ -19,9 +19,7 @@
     ];
 
     # CLI tools that are better installed via Homebrew (not in nixpkgs or issues)
-    brews = [
-      "sem-cli"
-    ];
+    brews = [ ];
 
     # GUI applications (common to all configurations)
     casks = [
@@ -48,6 +46,7 @@
 
       # Terminal
       "manaflow-ai/cmux/cmux"
+      "wezterm"
 
       # Utilities
       "hammerspoon"

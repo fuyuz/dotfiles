@@ -17,3 +17,6 @@ cjk_ime_agents = [
   "codex",
   "opencode",
 ]
+
+[ui]
+agent_panel_sort = "priority"

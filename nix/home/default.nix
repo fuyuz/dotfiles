@@ -1,7 +1,13 @@
-{ pkgs, username, ... }:
+{
+  pkgs,
+  username,
+  inputs,
+  ...
+}:
 
 {
   imports = [
+    inputs.hunk.homeManagerModules.default
     ./shell/zsh.nix
     ./shell/starship.nix
     ./programs/cli-tools.nix
