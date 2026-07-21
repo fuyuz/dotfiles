@@ -14,9 +14,7 @@
       brewfile = true;
     };
 
-    taps = [
-      "manaflow-ai/cmux"
-    ];
+    taps = [ ];
 
     # CLI tools that are better installed via Homebrew (not in nixpkgs or issues)
     brews = [ ];
@@ -45,7 +43,6 @@
       "jetbrains-toolbox"
 
       # Terminal
-      "manaflow-ai/cmux/cmux"
       "wezterm"
 
       # Utilities

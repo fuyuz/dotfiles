@@ -1,2 +1,13 @@
-theme = "midnight"
+theme = "custom"
 transparent_background = true
+
+[custom_theme]
+base = "github-dark-dimmed"
+label = "Midnight Transparent"
+addedBg = "#112212"
+removedBg = "#2e110f"
+movedAddedBg = "#281d08"
+movedRemovedBg = "#281d08"
+addedContentBg = "#183019"
+removedContentBg = "#401715"
+selectedHunk = "#32240a"

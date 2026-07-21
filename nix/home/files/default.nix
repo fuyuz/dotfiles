@@ -21,7 +21,7 @@ in
     "claude/CLAUDE.md".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/claude/CLAUDE.md";
 
-    # Ghostty configuration (also used by cmux)
+    # Ghostty configuration
     "ghostty/config".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/configs/ghostty/config";
 

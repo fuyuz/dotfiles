@@ -19,4 +19,4 @@ cjk_ime_agents = [
 ]
 
 [ui]
-agent_panel_sort = "priority"
+agent_panel_sort = "spaces"
