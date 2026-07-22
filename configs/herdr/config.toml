@@ -30,5 +30,5 @@ description = "lazygit"
 [[keys.command]]
 key = "prefix+shift+h"
 type = "pane"
-command = "hunk diff"
-description = "hunk diff"
+command = "gh pr diff | hunk patch"
+description = "PR diff in hunk"
