@@ -19,4 +19,16 @@ cjk_ime_agents = [
 ]
 
 [ui]
-agent_panel_sort = "spaces"
+agent_panel_sort = "priority"
+
+[[keys.command]]
+key = "prefix+shift+g"
+type = "pane"
+command = "lazygit"
+description = "lazygit"
+
+[[keys.command]]
+key = "prefix+shift+h"
+type = "pane"
+command = "hunk diff"
+description = "hunk diff"
