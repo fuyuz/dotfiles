@@ -9,8 +9,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    # For inputs whose flakes eagerly evaluate x86_64-darwin, which nixpkgs >= 26.11 dropped
-    nixpkgs-2605-darwin.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
+    # For overriding inputs whose flakes eagerly evaluate x86_64-darwin, which nixpkgs >= 26.11 dropped
+    systems.url = "github:nix-systems/triplet";
 
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -37,7 +37,7 @@
     hunk = {
       url = "github:modem-dev/hunk/v0.17.3";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.bun2nix.inputs.nixpkgs.follows = "nixpkgs-2605-darwin";
+      inputs.bun2nix.inputs.systems.follows = "systems";
     };
   };
 
