@@ -70,6 +70,9 @@
         pv = "pr view";
       };
     };
-    extensions = [ pkgs.gh-dash ];
+    extensions = [
+      pkgs.gh-dash
+      pkgs.gh-stack
+    ];
   };
 }

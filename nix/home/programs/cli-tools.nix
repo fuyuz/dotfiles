@@ -116,6 +116,12 @@
       enableZshIntegration = true;
     };
 
+    # Dev tool version manager
+    mise = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     # Lazygit - terminal UI for git
     lazygit.enable = true;
 
