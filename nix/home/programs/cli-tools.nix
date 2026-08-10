@@ -57,6 +57,7 @@
     inputs.llm-agents.packages.${system}.opencode
     inputs.llm-agents.packages.${system}.cursor-agent
     inputs.herdr.packages.${system}.default
+    (pkgs.callPackage ../../pkgs/terminal-browser.nix { })
 
     # Media tools
     ffmpeg

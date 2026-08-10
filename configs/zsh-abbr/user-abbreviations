@@ -33,3 +33,4 @@ abbr ghiv='gh issue view'
 abbr ghis='gh issue status'
 abbr ghpr='gh search prs --review-requested=@me --state=open'
 abbr gd='gh dash'
+abbr tb=terminal-browser
