@@ -34,6 +34,7 @@
     jujutsu
     jjui
     awscli2
+    ssm-session-manager-plugin
     google-cloud-sdk
     terraform
     actionlint
