@@ -314,6 +314,9 @@ require("lazy").setup({
 						},
 					},
 				},
+				-- mason に手で入れたものを automatic_enable が拾うのに任せない。
+				-- ここに並べたものが ensure_installed になる。
+				elixirls = {},
 			}
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
@@ -588,9 +591,48 @@ require("lazy").setup({
 	},
 	{ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter").setup()
+
+			-- main ブランチはパーサを同梱せず、setup() にも ensure_installed が無い。
+			-- ここで入れないと、nvim 同梱の 7 つ以外は一切色が付かない。
+			-- elixir と heex は vim syntax も無いので、素のテキストになる。
+			local want = {
+				"bash",
+				"css",
+				"diff",
+				"dockerfile",
+				"eex",
+				"elixir",
+				"erlang",
+				"git_rebase",
+				"gitcommit",
+				"heex",
+				"html",
+				"javascript",
+				"json",
+				"lua",
+				"luadoc",
+				"markdown",
+				"markdown_inline",
+				"nix",
+				"query",
+				"sql",
+				"toml",
+				"vim",
+				"vimdoc",
+				"yaml",
+			}
+			local installed = require("nvim-treesitter.config").get_installed("parsers")
+			local missing = vim.tbl_filter(function(lang)
+				return not vim.tbl_contains(installed, lang)
+			end, want)
+			if #missing > 0 then
+				require("nvim-treesitter").install(missing)
+			end
+
 			vim.api.nvim_create_autocmd("FileType", {
 				callback = function()
 					pcall(vim.treesitter.start)
