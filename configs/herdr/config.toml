@@ -1,3 +1,4 @@
+onboarding = false
 [update]
 version_check = false
 manifest_check = true
