@@ -528,7 +528,13 @@ require("lazy").setup({
 			end, { desc = "[A]dd file to harpoon list" })
 			vim.keymap.set("n", "<leader>h", function()
 				harpoon.ui:toggle_quick_menu(harpoon:list())
-			end, { desc = "Show [H]apoon list" })
+			end, { desc = "Show [H]arpoon list" })
+
+			for i = 1, 4 do
+				vim.keymap.set("n", "<leader>" .. i, function()
+					harpoon:list():select(i)
+				end, { desc = "Jump to harpoon file " .. i })
+			end
 		end,
 	},
 
