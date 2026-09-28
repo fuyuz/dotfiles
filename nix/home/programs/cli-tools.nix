@@ -54,8 +54,6 @@
     # AI coding tools
     inputs.llm-agents.packages.${system}.codex
     inputs.llm-agents.packages.${system}.claude-code
-    inputs.llm-agents.packages.${system}.junie
-    inputs.llm-agents.packages.${system}.opencode
     inputs.llm-agents.packages.${system}.cursor-agent
     inputs.herdr.packages.${system}.default
 
