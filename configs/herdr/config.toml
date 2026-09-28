@@ -27,9 +27,3 @@ key = "prefix+shift+g"
 type = "pane"
 command = "lazygit"
 description = "lazygit"
-
-[[keys.command]]
-key = "prefix+shift+h"
-type = "pane"
-command = "gh pr diff | hunk patch"
-description = "PR diff in hunk"

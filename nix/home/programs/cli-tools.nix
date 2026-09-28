@@ -124,13 +124,6 @@
     # Lazygit - terminal UI for git
     lazygit.enable = true;
 
-    # Hunk - diff viewer for agent-authored changesets
-    # (config.toml is symlinked from configs/ via files/default.nix, not `settings`)
-    hunk = {
-      enable = true;
-      enableClaudeIntegration = true;
-    };
-
     # Atuin - shell history
     atuin = {
       enable = true;
