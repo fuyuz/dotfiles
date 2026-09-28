@@ -35,7 +35,6 @@
       # Editor
       "codex-app"
       "cursor"
-      "zed"
 
       # Productivity
       "1password"
