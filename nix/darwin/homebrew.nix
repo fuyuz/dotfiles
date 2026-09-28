@@ -39,7 +39,6 @@
 
       # Productivity
       "1password"
-      "raycast"
       "jetbrains-toolbox"
 
       # Terminal
