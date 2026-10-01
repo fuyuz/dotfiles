@@ -33,7 +33,6 @@
       "slack"
 
       # Editor
-      "codex-app"
       "cursor"
 
       # Productivity
