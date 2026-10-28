@@ -39,6 +39,8 @@
     terraform
     actionlint
     devenv
+    colima
+    docker-client
 
     # JavaScript runtime
     bun
@@ -68,6 +70,8 @@
     unzip
     zip
   ];
+
+  home.file.".docker/cli-plugins/docker-compose".source = "${pkgs.docker-compose}/bin/docker-compose";
 
   programs = {
     # Fuzzy finder
@@ -123,6 +127,8 @@
 
     # Lazygit - terminal UI for git
     lazygit.enable = true;
+
+    lazydocker.enable = true;
 
     # Atuin - shell history
     atuin = {
