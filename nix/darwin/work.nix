@@ -9,9 +9,6 @@
   ];
 
   homebrew.casks = [
-    # Development
-    "docker-desktop"
-
     # Design
     "figma"
   ];
