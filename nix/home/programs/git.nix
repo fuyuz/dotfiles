@@ -1,26 +1,5 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
-let
-  localVersion = "0.4.0";
-  official = pkgs.gh-actions-lock or null;
-  gh-actions-lock =
-    if official != null && lib.versionAtLeast official.version localVersion then
-      official
-    else
-      pkgs.buildGoModule {
-        pname = "gh-actions-lock";
-        version = localVersion;
-        src = pkgs.fetchFromGitHub {
-          owner = "github";
-          repo = "gh-actions-lock";
-          rev = "v${localVersion}";
-          hash = "sha256-+J5nA1kzwmjY98u0HoJ2rsYD5hLNBhNnwmIT34Gxha4=";
-        };
-        vendorHash = "sha256-MS0GDAo/COikI5LwfgNPR83MhY6fAFg+Lpmzkv86X3M=";
-        subPackages = [ "cmd/gh-actions-lock" ];
-        doCheck = false;
-      };
-in
 {
   programs.git = {
     enable = true;
@@ -94,7 +73,7 @@ in
     extensions = [
       pkgs.gh-dash
       pkgs.gh-stack
-      gh-actions-lock
+      pkgs.gh-actions-lock
     ];
   };
 }
