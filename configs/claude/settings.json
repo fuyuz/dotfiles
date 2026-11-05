@@ -23,8 +23,7 @@
       "Bash(cat *)",
       "Bash(grep *)",
       "Bash(find *)",
-      "Bash(rg *)",
-      "Read(*)"
+      "Bash(rg *)"
     ],
     "deny": [
       "Bash(curl:*)",
