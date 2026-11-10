@@ -71,7 +71,10 @@
     zip
   ];
 
-  home.file.".docker/cli-plugins/docker-compose".source = "${pkgs.docker-compose}/bin/docker-compose";
+  home.file.".docker/cli-plugins/docker-compose" = {
+    source = "${pkgs.docker-compose}/bin/docker-compose";
+    force = true;
+  };
 
   programs = {
     # Fuzzy finder
