@@ -11,6 +11,7 @@
 
   homebrew.casks = [
     "blender"
+    "burp-suite"
     "discord"
     "orbstack"
     "steam"
