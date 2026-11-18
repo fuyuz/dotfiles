@@ -15,8 +15,5 @@
     "discord"
     "orbstack"
     "steam"
-
-    # Virtualization
-    "parallels"
   ];
 }

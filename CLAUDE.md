@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-macOS dotfiles for Apple Silicon (aarch64-darwin), declaratively managed with **Nix Flakes** + **nix-darwin** + **home-manager**. Two profiles exist: `personal` and `work`, differing only in profile-specific packages (e.g., Docker/Figma for work, Parallels/Wine for personal).
+macOS dotfiles for Apple Silicon (aarch64-darwin), declaratively managed with **Nix Flakes** + **nix-darwin** + **home-manager**. Two profiles exist: `personal` and `work`, differing only in profile-specific packages (e.g., Docker/Figma for work, Blender/Steam for personal).
 
 ## Commands
 
