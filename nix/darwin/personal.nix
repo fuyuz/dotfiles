@@ -12,6 +12,7 @@
   homebrew.casks = [
     "blender"
     "burp-suite"
+    "crest-browser"
     "discord"
     "orbstack"
     "steam"
