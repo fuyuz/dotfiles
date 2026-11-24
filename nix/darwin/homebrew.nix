@@ -26,6 +26,7 @@
 
       # Browsers
       "arc"
+      "crest-browser"
       "google-chrome"
       "zen"
 
