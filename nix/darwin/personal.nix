@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     elan
     flyctl
+    opencode
     rustup
   ];
 
