@@ -12,7 +12,6 @@
 
   homebrew.casks = [
     "blender"
-    "burp-suite"
     "caido"
     "discord"
     "orbstack"
